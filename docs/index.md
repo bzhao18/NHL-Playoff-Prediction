@@ -6,7 +6,7 @@ Bryan Zhao, Karishma Sabnani, Timothy Bang, Gabrielle Germanson, Noah Wallace
 The National Hockey League was formed in 1917 and spans 32 teams across the United States and Canada. In an average season, each team will play a total of 82 regular season games which generates a plethora of performance metrics on teams and players [1]. An important indicator of a successful hockey team is their ability to participate in the playoffs at the end of each season in April. 
 
 ### Problem Definition
-In the NHL, along with many other sports, the winner of a game boils down to whoever can score the most points. There are many factors that contribute to a team’s point production and goals allowed, ranging from total shots accumulated and face-offs won, to penalties and total saves [2]. The dataset chosen contains such factors mentioned previously like goals, saves, penalties, and plays.  The goal is to predict which 16 teams make it to the playoffs by the halfway point of the season. 
+In the NHL, along with many other sports, the winner of a game boils down to whoever can score the most points. There are many factors that contribute to a team’s point production and goals allowed, ranging from total shots accumulated and face-offs won, to penalties and total saves [2]. The dataset chosen contains such factors mentioned previously like goals, saves, penalties, and plays. The goal is to predict the rankings of the 16 teams that make it to the playoffs by the halfway point of the season.  
 
 
 ### Methods
