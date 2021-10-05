@@ -18,9 +18,9 @@ We will train our model on predicting a season’s playoff standings based on ea
 ![Image of Timeline](/images/timeline.png)
 
 ### Potential Results and Discussion
-A potential outcome of our project is that we have an algorithm that can make plausible predictions about the NHL playoffs. However, making predictions is difficult, even for experts. In a study published by ICT Innovations, artificial neural networks using different methods were tested to predict the outcome of NBA games. The best performing algorithm had an accuracy of 72.8% [4]. While those were predictions made on single games, we will be attempting to predict the outcome of multiple interconnected games. Consequently, making predictions on a larger scale bears the risk of having less precise predictions.
+A potential outcome of our project is that we have an algorithm that can make plausible predictions about the NHL playoffs. However, making predictions is difficult, even for experts. In a study published by ICT Innovations, artificial neural networks using different methods were tested to predict the outcome of NBA games. The best performing algorithm had an accuracy of 72.8% [4]. While those were predictions made on single games, we will be attempting to predict the outcome of all games in the second-half of the season. Consequently, making predictions on a larger scale bears the risk of having less precise predictions.
 
-Moreover, considering we will be working with data from one or more seasons to predict another season’s playoffs standings, there are some other challenges that threaten accurate results. These are challenges that are not feasible to account for in the scope of this semester, like possible player trades, player injuries, and new coaching or management.
+Moreover, considering we will work with data from the first half of the same season we are predicting playoff standings for, there are other challenges that threaten accuracy. These are unpredictable second-half incidents like player injuries and game cancellations.
 
 ### References
 [1]    J. Weissbock, H. Viktor, and D. Inkpen, “Use of Performance Metrics to Forecast Success in the National Hockey League,” p. 10.\\
