@@ -15,7 +15,7 @@ Our current plan is to use three different supervised learning algorithms to pre
 We will train our model on predicting a season’s playoff standings based on each team’s performance metrics during the first half of their season. After training, the model will be able to predict the current or future seasons’ playoff teams by the halfway point of the season. Note, the 2020-2021 seasons are excluded, since they are in an adjusted season format for COVID.
 
 ### Timeline
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR9UFpO27F-VLudRNhWWLRzRkvFFDGvQvN3FgBp6pab10n9RMswdYSTT3dT6Q8b-bMxAzKha9lLmio4/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<iframe style="width:100%; height:500px;overflow:auto;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR9UFpO27F-VLudRNhWWLRzRkvFFDGvQvN3FgBp6pab10n9RMswdYSTT3dT6Q8b-bMxAzKha9lLmio4/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 ![Image of Timeline](/images/timeline.png)
 
 ### Potential Results and Discussion
