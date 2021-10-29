@@ -1,15 +1,11 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
+import seaborn as sns
 from sklearn import preprocessing
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-import seaborn as sns
-
-plt.rc("font", size=14)
-
-sns.set(style="white")
-sns.set(style="whitegrid", color_codes=True)
+from imblearn.over_sampling import SMOTE
 
 # Get Numerical Data
 game_data_columns = ['team_id', 'game_id', 'won', 'goals', 'shots', 'pim', 'powerPlayOpportunities', 'injured_player_count']
@@ -28,9 +24,38 @@ skater_data_columns = ['game_id', 'team_id', 'player_id', 'timeOnIce', 'assists'
 skater_data = pd.read_csv("cleaned_data/skater_stats.csv", usecols=skater_data_columns)
 
 # -------------------------------------------------------------------------------------------------------------- #
+# Following https://towardsdatascience.com/building-a-logistic-regression-in-python-step-by-step-becd4d56c9c8
+
+plt.rc("font", size=14)
+
+sns.set(style="white")
+sns.set(style="whitegrid", color_codes=True)
 
 # Variable to Predict: 'won' from game_data
 # Print info on training data 'won' labels
 print(game_data['won'].value_counts())
 sns.countplot(x='won',data=game_data, palette='hls')
-plt.show()
+# plt.show()
+
+losses = len(game_data[game_data['won']==0])
+wins = len(game_data[game_data['won']==1])
+pct_loss = losses/(losses+wins)
+print("Percentage of losses", pct_loss*100)
+pct_wins = wins/(losses+wins)
+print("Percentage of wins", pct_wins*100)
+
+X = game_data.loc[:, game_data.columns != 'won']
+y = game_data.loc[:, game_data.columns == 'won']
+
+os = SMOTE(random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+columns = X_train.columns
+os_data_X,os_data_y=os.fit_resample(X_train, y_train)
+os_data_X = pd.DataFrame(data=os_data_X,columns=columns)
+os_data_y= pd.DataFrame(data=os_data_y,columns=['won'])
+# we can Check the numbers of our data
+print("length of oversampled data is ",len(os_data_X))
+print("Number of losses in oversampled data",len(os_data_y[os_data_y['won']==0]))
+print("Number of wins",len(os_data_y[os_data_y['won']==1]))
+print("Proportion of loss data in oversampled data is ",len(os_data_y[os_data_y['won']==0])/len(os_data_X))
+print("Proportion of win data in oversampled data is ",len(os_data_y[os_data_y['won']==1])/len(os_data_X))
