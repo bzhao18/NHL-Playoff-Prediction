@@ -2,13 +2,17 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 import seaborn as sns
+import statsmodels.api as sm
 from sklearn import preprocessing
+from sklearn import metrics
+from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import SMOTE
 
-# Get Numerical Data
-game_data_columns = ['team_id', 'game_id', 'won', 'goals', 'shots', 'pim', 'powerPlayOpportunities', 'injured_player_count']
+# Get Numerical Data 
+# Skip team_id
+game_data_columns = ['game_id', 'won', 'goals', 'shots', 'pim', 'powerPlayOpportunities', 'injured_player_count']
 
 game_data = pd.read_csv("cleaned_data/game_stats.csv", usecols=game_data_columns)
 # Change 'won' column from boolean to int type
@@ -59,3 +63,18 @@ print("Number of losses in oversampled data",len(os_data_y[os_data_y['won']==0])
 print("Number of wins",len(os_data_y[os_data_y['won']==1]))
 print("Proportion of loss data in oversampled data is ",len(os_data_y[os_data_y['won']==0])/len(os_data_X))
 print("Proportion of win data in oversampled data is ",len(os_data_y[os_data_y['won']==1])/len(os_data_X))
+
+# Could perform Recursive Feature Elimination here
+
+# Logistic Regression Model
+# Notes: Running on just on game_data and all features are significant.
+X = os_data_X
+y= os_data_y
+logit_model=sm.Logit(y,X)
+result=logit_model.fit()
+# print(result.summary2())
+
+# Remove any features that have p-values greater or equal to .05 here (look at P>|z| column)
+X_train, X_test, y_train, y_test = train_test_split(X, np.ravel(y), test_size=0.3, random_state=0)
+logreg = LogisticRegression()
+logreg.fit(X_train, y_train)
