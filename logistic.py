@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 
-# TODO: Pre-process data (feature selection like PCA) and then use this script
+# TODO: Upse re-processed data from pca.py
 
 # Get numerical data from game_stats.csv. Skip team_id.
 # goalie_stats.csv and skater_stats.csv data not used yet since need to join with game_stats to have a 'won' label
