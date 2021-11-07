@@ -12,7 +12,7 @@ from sklearn.preprocessing import MinMaxScaler
 # transform data using PCA and use transformed data for logistic regression
 def logistic_pca(data, target, n_components):
     # split data into training and test sets
-    X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.3, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.2, random_state=42)
     # standardize data
     scaler = StandardScaler()
     scaler.fit(X_train)
@@ -34,9 +34,8 @@ def logistic_pca(data, target, n_components):
 
     # Compute confusion matrix
     print('Confusion matrix:\n', confusion_matrix(y_test, y_pred))
-
     # ROC curve
-    fpr, tpr, thresholds = roc_curve(y_test, y_pred)
+    fpr, tpr, thresholds = roc_curve(y_test, y_pred, pos_label=16)
     roc_auc = auc(fpr, tpr)
     print("ROC AUC: %0.2f" % roc_auc)
     # plot ROC curve
@@ -51,16 +50,17 @@ def logistic_pca(data, target, n_components):
     plt.legend(loc="lower right")
     plt.show()
 
-game_data_columns = ['game_id', 'won', 'goals', 'shots', 'pim', 'powerPlayOpportunities', 'injured_player_count']
-game_data = pd.read_csv("cleaned_data/game_stats.csv", usecols=game_data_columns)
+game_data_columns = ['team_id','season','total_first_half_season_wins','total_first_half_season_shots','total_first_half_season_goals','total_first_half_season_pim','total_first_half_season_powerPlayOpportunities','end_season_playoff_standing']
+game_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=game_data_columns)
 # Change 'won' column from boolean to int type
-game_data['won'] = game_data['won'].astype(int)
+# game_data['won'] = game_data['won'].astype(int)
 # Change NaN in 'injured_player_count' column to 0
-game_data['injured_player_count'] = game_data['injured_player_count'].fillna(0)
-
-X = game_data.loc[:, game_data.columns != 'won'] # Data
-y = game_data.loc[:, game_data.columns == 'won'] # Data's labels
-
+game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].fillna(0)
+game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].astype(int)
+print(game_data['total_first_half_season_goals'])
+# get X and y
+X = game_data.loc[:, game_data.columns != 'end_season_playoff_standing']
+y = game_data.loc[:, game_data.columns == 'end_season_playoff_standing']
 logistic_pca(X, y, 5)
 
 
