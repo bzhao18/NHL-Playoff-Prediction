@@ -1,0 +1,514 @@
+﻿team_id,team,season,total_first_half_season_wins,total_first_half_season_shots,total_first_half_season_goals,total_first_half_season_pim,total_first_half_season_powerPlayOpportunities,end_season_playoff_standing
+8,Montreal Canadiens (MTL),2018,28,1684,152,467,161,
+14,Tampa Bay Lightning (TBL),2001,19,1338,102,635,198,
+23,Vancouver Canucks (VAN),2014,27,1380,127,489,146,8
+13,Florida Panthers (FLA),2017,20,1661,134,555,144,
+20,Calgary Flames (CGY),2002,17,1417,112,771,245,
+5,Pittsburgh Penguins (PIT),2015,24,1552,120,399,161,4
+4,Philadelphia Flyers (PHI),2001,31,1585,164,741,195,7
+2,NY Islanders Islanders (NYI),2015,25,1422,127,422,137,10
+2,NY Islanders Islanders (NYI),2003,24,1412,143,720,203,15
+26,Los Angeles Kings (LAK),2007,19,1453,137,596,239,
+26,Los Angeles Kings (LAK),2018,20,1412,113,384,137,
+10,Toronto Maple Leafs (TOR),2010,19,1427,121,601,194,
+23,Vancouver Canucks (VAN),2005,29,1512,172,895,340,
+23,Vancouver Canucks (VAN),2016,23,1387,115,418,149,
+11,Atlanta Thrashers (ATL),2010,24,1581,149,590,186,
+30,Minnesota Wild (MIN),2008,24,1335,121,549,204,
+18,Nashville Predators (NSH),2009,30,1634,147,492,197,10
+4,Philadelphia Flyers (PHI),2018,21,1544,141,488,147,
+29,Columbus Blue Jackets (CBJ),2017,27,1677,127,354,142,14
+6,Boston Bruins (BOS),2003,24,1577,127,824,195,4
+7,Buffalo Sabres (BUF),2000,25,1297,125,700,218,8
+3,NY Rangers Rangers (NYR),2013,29,1782,138,584,183,12
+7,Buffalo Sabres (BUF),2002,15,1421,109,840,229,
+9,Ottawa Senators (OTT),2017,15,1443,124,414,152,
+22,Edmonton Oilers (EDM),2008,25,1346,135,723,219,
+21,Colorado Avalanche (COL),2002,20,1534,144,615,239,6
+8,Montreal Canadiens (MTL),2001,22,1416,143,654,209,
+21,Colorado Avalanche (COL),2010,25,1517,158,623,173,
+15,Washington Capitals (WSH),2015,35,1444,156,421,142,1
+2,NY Islanders Islanders (NYI),2006,23,1504,145,705,218,16
+29,Columbus Blue Jackets (CBJ),2009,22,1682,147,758,211,
+16,Chicago Blackhawks (CHI),2013,33,1886,194,460,177,7
+10,Toronto Maple Leafs (TOR),2018,30,1538,174,319,122,7
+20,Calgary Flames (CGY),2006,27,1356,155,767,253,13
+13,Florida Panthers (FLA),2010,22,1538,129,393,168,
+24,Anaheim Ducks (ANA),2007,26,1428,127,948,230,5
+9,Ottawa Senators (OTT),2006,30,1728,177,765,264,9
+14,Tampa Bay Lightning (TBL),2014,31,1485,161,486,179,5
+25,Dallas Stars (DAL),2016,20,1514,135,561,174,
+20,Calgary Flames (CGY),2000,17,1370,124,862,281,
+6,Boston Bruins (BOS),2010,28,1702,151,659,176,7
+7,Buffalo Sabres (BUF),2009,32,1654,146,590,212,11
+24,Anaheim Ducks (ANA),2013,40,1760,187,581,191,2
+27,Phoenix Coyotes (PHX),2003,18,1301,125,818,208,
+16,Chicago Blackhawks (CHI),2009,37,1854,175,621,193,3
+24,Anaheim Ducks (ANA),2018,21,1382,117,442,138,
+3,NY Rangers Rangers (NYR),2014,27,1385,133,438,140,1
+25,Dallas Stars (DAL),2013,24,1712,153,591,192,16
+8,Montreal Canadiens (MTL),2014,32,1325,123,521,146,2
+10,Toronto Maple Leafs (TOR),2014,22,1462,141,457,176,
+19,St Louis Blues (STL),2008,19,1297,129,796,205,14
+5,Pittsburgh Penguins (PIT),2002,21,1330,138,638,237,
+22,Edmonton Oilers (EDM),2010,15,1307,121,720,179,
+52,Winnipeg Jets (WPG),2018,32,1594,170,479,155,10
+21,Colorado Avalanche (COL),2008,23,1470,131,642,208,
+24,Anaheim Ducks (ANA),2015,22,1437,99,585,127,6
+25,Dallas Stars (DAL),2018,25,1509,127,402,132,14
+17,Detroit Red Wings (DET),2008,31,1760,174,509,212,3
+29,Columbus Blue Jackets (CBJ),2001,14,1327,107,681,240,
+12,Carolina Hurricanes (CAR),2008,24,1569,125,481,229,11
+13,Florida Panthers (FLA),2008,23,1374,135,576,188,
+14,Tampa Bay Lightning (TBL),2016,22,1514,134,545,180,
+30,Minnesota Wild (MIN),2002,25,1339,126,680,244,10
+27,Phoenix Coyotes (PHX),2005,26,1422,152,1007,357,
+7,Buffalo Sabres (BUF),2007,23,1512,146,609,217,
+7,Buffalo Sabres (BUF),2018,25,1617,142,373,150,
+5,Pittsburgh Penguins (PIT),2018,27,1633,175,382,144,9
+6,Boston Bruins (BOS),2014,26,1474,129,539,116,
+15,Washington Capitals (WSH),2013,24,1652,147,707,195,
+24,Anaheim Ducks (ANA),2009,25,1606,148,881,195,
+7,Buffalo Sabres (BUF),2010,23,1634,133,631,182,15
+6,Boston Bruins (BOS),2007,26,1330,130,675,184,15
+18,Nashville Predators (NSH),2007,25,1532,145,602,228,16
+24,Anaheim Ducks (ANA),2000,15,1431,123,741,259,
+10,Toronto Maple Leafs (TOR),2006,24,1675,165,800,269,
+7,Buffalo Sabres (BUF),2014,14,1144,88,608,140,
+25,Dallas Stars (DAL),2005,35,1512,162,917,321,3
+1,New Jersey Devils (NJD),2008,32,1553,153,654,174,5
+3,NY Rangers Rangers (NYR),2015,27,1437,140,410,137,9
+12,Carolina Hurricanes (CAR),2009,19,1565,142,705,217,
+14,Tampa Bay Lightning (TBL),2009,22,1569,136,927,219,
+22,Edmonton Oilers (EDM),2001,25,1518,142,844,236,15
+3,NY Rangers Rangers (NYR),2005,29,1591,159,736,289,10
+27,Phoenix Coyotes (PHX),2010,25,1596,147,550,191,11
+13,Florida Panthers (FLA),2014,21,1449,109,425,141,
+12,Carolina Hurricanes (CAR),2013,24,1642,133,422,185,
+27,Phoenix Coyotes (PHX),2007,27,1566,137,723,216,
+7,Buffalo Sabres (BUF),2016,20,1423,117,412,151,
+26,Los Angeles Kings (LAK),2010,27,1455,138,621,184,12
+6,Boston Bruins (BOS),2017,29,1528,154,469,151,4
+23,Vancouver Canucks (VAN),2011,30,1540,155,683,191,1
+9,Ottawa Senators (OTT),2014,20,1446,133,562,172,13
+24,Anaheim Ducks (ANA),2011,18,1245,123,601,162,
+54,Vegas Golden Knights (VGK),2018,29,1750,156,371,162,15
+18,Nashville Predators (NSH),2011,30,1374,137,481,169,5
+18,Nashville Predators (NSH),2003,25,1334,124,916,272,16
+10,Toronto Maple Leafs (TOR),2001,28,1522,159,802,224,3
+9,Ottawa Senators (OTT),2007,32,1571,177,667,202,13
+24,Anaheim Ducks (ANA),2005,24,1629,147,991,303,12
+6,Boston Bruins (BOS),2005,22,1577,152,750,279,
+22,Edmonton Oilers (EDM),2014,13,1364,110,437,149,
+5,Pittsburgh Penguins (PIT),2009,34,1827,168,750,231,8
+21,Colorado Avalanche (COL),2003,29,1553,162,768,223,10
+30,Minnesota Wild (MIN),2015,23,1402,121,330,140,16
+29,Columbus Blue Jackets (CBJ),2008,24,1436,130,781,211,15
+12,Carolina Hurricanes (CAR),2018,24,1788,139,385,167,11
+13,Florida Panthers (FLA),2003,17,1438,115,768,188,
+25,Dallas Stars (DAL),2007,29,1405,154,725,219,8
+22,Edmonton Oilers (EDM),2009,16,1517,133,700,195,
+17,Detroit Red Wings (DET),2011,33,1648,155,422,184,8
+15,Washington Capitals (WSH),2006,21,1436,160,863,277,
+19,St Louis Blues (STL),2003,25,1363,123,836,221,14
+20,Calgary Flames (CGY),2005,30,1464,139,924,314,7
+7,Buffalo Sabres (BUF),2011,20,1398,116,582,166,
+3,NY Rangers Rangers (NYR),2018,21,1383,134,488,138,
+8,Montreal Canadiens (MTL),2005,23,1420,142,778,283,15
+19,St Louis Blues (STL),2009,24,1571,139,873,196,
+16,Chicago Blackhawks (CHI),2011,29,1593,158,521,174,10
+6,Boston Bruins (BOS),2002,26,1643,151,881,208,15
+28,San Jose Sharks (SJS),2007,28,1421,134,657,236,2
+30,Minnesota Wild (MIN),2005,25,1358,150,799,292,
+5,Pittsburgh Penguins (PIT),2003,11,1238,105,811,245,
+9,Ottawa Senators (OTT),2009,31,1665,153,783,191,13
+15,Washington Capitals (WSH),2001,20,1616,147,780,221,
+11,Atlanta Thrashers (ATL),2007,24,1383,140,672,212,
+8,Montreal Canadiens (MTL),2008,28,1494,146,704,229,13
+6,Boston Bruins (BOS),2015,26,1541,144,604,135,
+15,Washington Capitals (WSH),2000,23,1430,138,657,214,10
+2,NY Islanders Islanders (NYI),2017,25,1595,170,407,160,
+27,Phoenix Coyotes (PHX),2000,23,1233,131,872,214,
+29,Columbus Blue Jackets (CBJ),2000,17,1268,112,753,221,
+17,Detroit Red Wings (DET),2009,26,1787,138,515,210,7
+20,Calgary Flames (CGY),2011,23,1378,118,512,161,
+24,Anaheim Ducks (ANA),2008,25,1555,146,900,201,16
+25,Dallas Stars (DAL),2014,22,1490,150,508,175,
+13,Florida Panthers (FLA),2009,24,1576,144,631,205,
+9,Ottawa Senators (OTT),2011,27,1603,152,736,179,16
+19,St Louis Blues (STL),2000,34,1589,172,899,251,6
+16,Chicago Blackhawks (CHI),2014,31,1724,149,374,176,7
+9,Ottawa Senators (OTT),2005,34,1673,200,925,307,2
+23,Vancouver Canucks (VAN),2003,29,1519,151,758,249,7
+15,Washington Capitals (WSH),2007,23,1509,145,618,218,12
+15,Washington Capitals (WSH),2009,37,1802,210,638,209,1
+21,Colorado Avalanche (COL),2001,30,1555,141,665,240,4
+22,Edmonton Oilers (EDM),2011,18,1284,120,606,183,
+9,Ottawa Senators (OTT),2015,23,1418,135,556,151,
+3,NY Rangers Rangers (NYR),2009,24,1649,138,777,202,
+10,Toronto Maple Leafs (TOR),2002,27,1351,144,777,238,9
+18,Nashville Predators (NSH),2006,36,1439,181,744,265,3
+9,Ottawa Senators (OTT),2001,27,1623,163,923,216,14
+1,New Jersey Devils (NJD),2001,23,1607,132,672,167,10
+10,Toronto Maple Leafs (TOR),2007,20,1609,142,650,225,
+28,San Jose Sharks (SJS),2011,27,1623,125,458,159,12
+30,Minnesota Wild (MIN),2003,17,1268,114,656,207,
+2,NY Islanders Islanders (NYI),2008,14,1402,118,706,195,
+1,New Jersey Devils (NJD),2011,26,1331,121,593,163,9
+11,Atlanta Thrashers (ATL),2009,24,1595,161,711,209,
+16,Chicago Blackhawks (CHI),2015,33,1620,146,365,158,5
+28,San Jose Sharks (SJS),2017,26,1612,142,440,172,11
+21,Colorado Avalanche (COL),2005,28,1569,191,780,327,13
+1,New Jersey Devils (NJD),2010,16,1425,99,550,153,
+4,Philadelphia Flyers (PHI),2014,21,1478,137,528,169,
+29,Columbus Blue Jackets (CBJ),2013,27,1556,155,637,184,14
+27,Phoenix Coyotes (PHX),2002,19,1485,128,860,263,
+14,Tampa Bay Lightning (TBL),2008,17,1469,127,758,217,
+20,Calgary Flames (CGY),2009,27,1545,140,838,186,
+9,Ottawa Senators (OTT),2000,29,1521,167,689,239,4
+27,Phoenix Coyotes (PHX),2011,22,1485,128,397,149,11
+1,New Jersey Devils (NJD),2007,28,1417,123,594,216,6
+21,Colorado Avalanche (COL),2018,22,1617,169,498,187,16
+19,St Louis Blues (STL),2015,28,1551,126,532,143,3
+8,Montreal Canadiens (MTL),2017,20,1691,128,412,151,
+21,Colorado Avalanche (COL),2015,27,1470,142,490,176,
+22,Edmonton Oilers (EDM),2013,18,1526,145,622,194,
+2,NY Islanders Islanders (NYI),2007,24,1489,124,642,209,
+16,Chicago Blackhawks (CHI),2001,30,1551,154,855,213,9
+9,Ottawa Senators (OTT),2013,24,1761,153,643,186,
+25,Dallas Stars (DAL),2000,28,1349,138,594,242,5
+18,Nashville Predators (NSH),2002,17,1440,116,613,277,3
+18,Nashville Predators (NSH),2014,31,1544,141,425,154,6
+6,Boston Bruins (BOS),2009,23,1606,124,634,175,14
+21,Colorado Avalanche (COL),2013,34,1547,155,575,154,3
+14,Tampa Bay Lightning (TBL),2017,34,1621,174,447,173,3
+29,Columbus Blue Jackets (CBJ),2016,32,1455,158,436,142,4
+25,Dallas Stars (DAL),2006,30,1442,130,788,280,6
+30,Minnesota Wild (MIN),2001,17,1267,126,807,248,
+28,San Jose Sharks (SJS),2014,26,1511,135,492,159,
+8,Montreal Canadiens (MTL),2009,25,1549,139,688,168,16
+25,Dallas Stars (DAL),2015,31,1616,160,427,155,2
+23,Vancouver Canucks (VAN),2017,20,1492,131,457,167,
+30,Minnesota Wild (MIN),2013,29,1506,131,556,175,11
+26,Los Angeles Kings (LAK),2014,21,1495,132,498,168,
+14,Tampa Bay Lightning (TBL),2013,31,1617,154,581,179,8
+14,Tampa Bay Lightning (TBL),2000,14,1263,127,809,265,
+20,Calgary Flames (CGY),2007,26,1468,149,762,225,14
+53,Arizona Coyotes (ARI),2018,23,1532,130,389,159,
+1,New Jersey Devils (NJD),2015,25,1210,112,509,157,
+24,Anaheim Ducks (ANA),2010,28,1463,136,798,172,9
+14,Tampa Bay Lightning (TBL),2003,25,1511,134,681,221,2
+13,Florida Panthers (FLA),2013,21,1591,125,550,178,
+5,Pittsburgh Penguins (PIT),2006,24,1427,163,839,294,10
+28,San Jose Sharks (SJS),2005,23,1467,149,639,301,11
+28,San Jose Sharks (SJS),2016,31,1503,133,390,157,11
+4,Philadelphia Flyers (PHI),2000,25,1572,149,680,215,7
+27,Phoenix Coyotes (PHX),2009,33,1665,149,655,218,4
+8,Montreal Canadiens (MTL),2006,28,1506,146,734,232,
+10,Toronto Maple Leafs (TOR),2011,25,1407,148,496,173,
+30,Minnesota Wild (MIN),2017,27,1504,144,462,153,8
+22,Edmonton Oilers (EDM),2015,19,1441,118,395,145,
+15,Washington Capitals (WSH),2017,29,1422,147,507,155,6
+2,NY Islanders Islanders (NYI),2013,21,1710,152,602,186,
+19,St Louis Blues (STL),2010,22,1461,127,776,173,
+6,Boston Bruins (BOS),2001,29,1798,158,973,184,2
+9,Ottawa Senators (OTT),2010,17,1452,108,713,155,
+52,Winnipeg Jets (WPG),2013,25,1691,150,654,182,
+23,Vancouver Canucks (VAN),2002,29,1458,159,726,273,7
+15,Washington Capitals (WSH),2016,33,1462,159,451,150,1
+28,San Jose Sharks (SJS),2000,29,1385,146,848,244,11
+8,Montreal Canadiens (MTL),2016,29,1496,149,525,153,7
+19,St Louis Blues (STL),2014,31,1509,150,523,164,4
+15,Washington Capitals (WSH),2014,25,1469,143,506,146,9
+1,New Jersey Devils (NJD),2014,18,1205,107,486,139,
+27,Phoenix Coyotes (PHX),2006,23,1457,135,902,259,
+4,Philadelphia Flyers (PHI),2003,26,1650,147,793,201,8
+4,Philadelphia Flyers (PHI),2015,21,1431,107,577,149,13
+4,Philadelphia Flyers (PHI),2007,28,1359,163,944,247,11
+10,Toronto Maple Leafs (TOR),2017,28,1600,158,395,143,7
+25,Dallas Stars (DAL),2017,28,1618,152,554,157,
+1,New Jersey Devils (NJD),2013,23,1440,130,440,162,
+53,Arizona Coyotes (ARI),2016,16,1359,104,525,144,
+29,Columbus Blue Jackets (CBJ),2005,20,1439,125,946,296,
+19,St Louis Blues (STL),2011,29,1534,123,653,172,3
+8,Montreal Canadiens (MTL),2000,17,1422,130,679,291,
+21,Colorado Avalanche (COL),2011,26,1588,124,599,157,
+12,Carolina Hurricanes (CAR),2017,23,1714,136,315,160,
+14,Tampa Bay Lightning (TBL),2018,37,1644,198,431,168,1
+8,Montreal Canadiens (MTL),2007,27,1471,155,623,233,3
+3,NY Rangers Rangers (NYR),2008,29,1638,124,709,216,12
+3,NY Rangers Rangers (NYR),2000,20,1496,161,878,244,
+6,Boston Bruins (BOS),2008,36,1469,172,637,191,2
+10,Toronto Maple Leafs (TOR),2005,25,1425,161,865,328,
+8,Montreal Canadiens (MTL),2015,24,1589,133,420,172,
+30,Minnesota Wild (MIN),2011,24,1315,110,579,164,
+21,Colorado Avalanche (COL),2017,27,1468,159,472,187,16
+24,Anaheim Ducks (ANA),2014,32,1520,140,571,161,3
+13,Florida Panthers (FLA),2011,22,1418,119,516,179,14
+17,Detroit Red Wings (DET),2006,32,1725,156,626,260,2
+9,Ottawa Senators (OTT),2003,28,1510,174,687,242,6
+12,Carolina Hurricanes (CAR),2010,25,1547,149,563,209,
+17,Detroit Red Wings (DET),2018,19,1491,143,434,136,
+17,Detroit Red Wings (DET),2003,29,1596,170,683,219,1
+25,Dallas Stars (DAL),2011,25,1361,123,638,154,
+22,Edmonton Oilers (EDM),2016,28,1596,149,484,157,8
+18,Nashville Predators (NSH),2013,24,1611,135,548,168,
+26,Los Angeles Kings (LAK),2009,33,1596,158,686,213,9
+23,Vancouver Canucks (VAN),2000,27,1580,170,738,264,15
+12,Carolina Hurricanes (CAR),2014,17,1413,101,367,143,
+17,Detroit Red Wings (DET),2017,19,1422,123,432,146,
+24,Anaheim Ducks (ANA),2017,25,1520,141,556,141,9
+30,Minnesota Wild (MIN),2007,29,1328,142,666,220,7
+28,San Jose Sharks (SJS),2015,26,1450,140,446,160,11
+11,Atlanta Thrashers (ATL),2002,17,1386,139,764,240,
+23,Vancouver Canucks (VAN),2013,27,1709,136,823,177,
+17,Detroit Red Wings (DET),2013,23,1583,132,484,185,15
+25,Dallas Stars (DAL),2002,30,1593,165,706,202,2
+6,Boston Bruins (BOS),2013,34,1653,159,610,151,1
+30,Minnesota Wild (MIN),2000,18,1298,112,749,244,
+10,Toronto Maple Leafs (TOR),2003,28,1372,141,909,237,5
+2,NY Islanders Islanders (NYI),2005,22,1506,143,819,292,
+19,St Louis Blues (STL),2018,22,1525,139,431,144,12
+3,NY Rangers Rangers (NYR),2002,21,1609,139,1000,229,
+19,St Louis Blues (STL),2005,12,1434,128,914,332,
+2,NY Islanders Islanders (NYI),2018,29,1384,145,422,144,5
+23,Vancouver Canucks (VAN),2001,26,1551,166,891,246,13
+5,Pittsburgh Penguins (PIT),2017,28,1796,154,525,180,10
+26,Los Angeles Kings (LAK),2011,24,1559,107,597,196,13
+30,Minnesota Wild (MIN),2009,27,1556,149,614,216,
+52,Winnipeg Jets (WPG),2011,22,1503,123,572,158,
+23,Vancouver Canucks (VAN),2008,22,1364,139,895,212,7
+29,Columbus Blue Jackets (CBJ),2011,13,1488,112,592,185,
+12,Carolina Hurricanes (CAR),2000,22,1292,129,733,235,16
+5,Pittsburgh Penguins (PIT),2008,24,1356,150,708,223,8
+13,Florida Panthers (FLA),2002,15,1337,118,750,225,
+17,Detroit Red Wings (DET),2016,20,1408,117,455,162,
+17,Detroit Red Wings (DET),2005,34,1725,186,715,303,1
+18,Nashville Predators (NSH),2001,20,1354,136,637,217,
+29,Columbus Blue Jackets (CBJ),2006,21,1383,127,810,299,
+17,Detroit Red Wings (DET),2002,27,1571,149,742,208,
+12,Carolina Hurricanes (CAR),2006,26,1638,163,683,304,
+1,New Jersey Devils (NJD),2018,19,1587,145,438,158,
+53,Arizona Coyotes (ARI),2015,24,1345,130,528,180,
+8,Montreal Canadiens (MTL),2003,25,1440,127,682,204,13
+3,NY Rangers Rangers (NYR),2006,25,1523,143,655,259,14
+17,Detroit Red Wings (DET),2015,25,1405,121,397,153,15
+5,Pittsburgh Penguins (PIT),2005,12,1482,144,985,318,
+10,Toronto Maple Leafs (TOR),2009,17,1872,148,727,207,
+3,NY Rangers Rangers (NYR),2017,25,1571,150,394,154,
+28,San Jose Sharks (SJS),2003,24,1430,128,729,216,3
+19,St Louis Blues (STL),2007,23,1248,125,659,208,
+18,Nashville Predators (NSH),2010,27,1429,128,456,174,10
+9,Ottawa Senators (OTT),2016,26,1358,123,494,150,12
+1,New Jersey Devils (NJD),2005,26,1510,143,614,300,8
+18,Nashville Predators (NSH),2017,29,1477,142,591,168,1
+8,Montreal Canadiens (MTL),2011,19,1435,129,495,191,
+2,NY Islanders Islanders (NYI),2016,21,1437,135,406,137,
+29,Columbus Blue Jackets (CBJ),2003,14,1460,107,745,265,
+13,Florida Panthers (FLA),2000,11,1367,114,996,225,
+53,Arizona Coyotes (ARI),2014,17,1442,110,483,152,
+16,Chicago Blackhawks (CHI),2010,26,1615,154,484,168,13
+17,Detroit Red Wings (DET),2007,38,1800,172,592,233,1
+22,Edmonton Oilers (EDM),2002,24,1439,146,735,247,14
+29,Columbus Blue Jackets (CBJ),2014,21,1281,115,554,159,
+27,Phoenix Coyotes (PHX),2013,25,1724,152,587,186,
+17,Detroit Red Wings (DET),2000,29,1705,152,702,235,
+1,New Jersey Devils (NJD),2016,20,1355,110,486,168,
+14,Tampa Bay Lightning (TBL),2005,27,1625,152,580,308,16
+6,Boston Bruins (BOS),2006,22,1436,134,743,248,
+26,Los Angeles Kings (LAK),2003,20,1503,137,788,236,
+26,Los Angeles Kings (LAK),2017,27,1542,140,503,147,12
+19,St Louis Blues (STL),2002,28,1520,170,946,266,8
+24,Anaheim Ducks (ANA),2001,19,1536,125,945,277,
+29,Columbus Blue Jackets (CBJ),2018,28,1565,158,330,146,13
+19,St Louis Blues (STL),2017,31,1738,148,424,170,
+10,Toronto Maple Leafs (TOR),2000,24,1424,151,897,221,14
+2,NY Islanders Islanders (NYI),2009,23,1691,137,605,210,
+22,Edmonton Oilers (EDM),2017,22,1677,133,508,131,
+10,Toronto Maple Leafs (TOR),2013,29,1551,155,733,180,
+20,Calgary Flames (CGY),2008,30,1542,153,777,225,10
+21,Colorado Avalanche (COL),2014,21,1438,125,503,159,
+21,Colorado Avalanche (COL),2009,30,1410,150,703,213,12
+24,Anaheim Ducks (ANA),2016,27,1477,131,571,161,6
+14,Tampa Bay Lightning (TBL),2011,21,1356,134,582,162,
+28,San Jose Sharks (SJS),2006,33,1464,157,630,264,5
+5,Pittsburgh Penguins (PIT),2014,28,1549,143,704,159,15
+26,Los Angeles Kings (LAK),2013,30,1747,128,670,199,10
+13,Florida Panthers (FLA),2006,19,1694,147,773,225,
+14,Tampa Bay Lightning (TBL),2015,27,1421,128,422,171,12
+3,NY Rangers Rangers (NYR),2010,29,1518,143,742,181,16
+12,Carolina Hurricanes (CAR),2002,17,1598,115,890,289,
+25,Dallas Stars (DAL),2001,24,1454,141,646,233,
+20,Calgary Flames (CGY),2003,25,1439,121,868,224,12
+20,Calgary Flames (CGY),2017,25,1630,137,549,171,
+5,Pittsburgh Penguins (PIT),2007,28,1428,142,746,234,4
+7,Buffalo Sabres (BUF),2005,31,1479,159,702,296,5
+16,Chicago Blackhawks (CHI),2008,26,1504,155,720,209,6
+4,Philadelphia Flyers (PHI),2009,27,1677,157,903,214,15
+15,Washington Capitals (WSH),2002,24,1458,152,865,229,13
+26,Los Angeles Kings (LAK),2016,24,1493,122,462,141,
+26,Los Angeles Kings (LAK),2005,30,1625,182,1054,369,
+6,Boston Bruins (BOS),2000,22,1494,133,882,250,
+30,Minnesota Wild (MIN),2006,27,1553,136,570,267,11
+23,Vancouver Canucks (VAN),2007,26,1337,130,798,233,
+11,Atlanta Thrashers (ATL),2008,17,1395,146,724,201,
+23,Vancouver Canucks (VAN),2018,23,1470,146,511,161,
+24,Anaheim Ducks (ANA),2003,16,1562,111,688,193,
+30,Minnesota Wild (MIN),2010,25,1267,130,544,175,
+19,St Louis Blues (STL),2006,20,1382,126,798,239,
+7,Buffalo Sabres (BUF),2017,14,1546,115,409,154,
+22,Edmonton Oilers (EDM),2006,24,1313,135,766,255,
+9,Ottawa Senators (OTT),2002,32,1542,172,686,263,1
+6,Boston Bruins (BOS),2011,31,1541,166,748,166,7
+9,Ottawa Senators (OTT),2008,17,1374,111,685,200,
+2,NY Islanders Islanders (NYI),2011,19,1447,112,448,149,
+10,Toronto Maple Leafs (TOR),2015,17,1479,110,428,148,
+20,Calgary Flames (CGY),2018,33,1623,190,464,178,2
+21,Colorado Avalanche (COL),2006,25,1583,153,560,241,
+5,Pittsburgh Penguins (PIT),2001,22,1430,126,817,218,
+28,San Jose Sharks (SJS),2002,19,1469,137,763,240,
+52,Winnipeg Jets (WPG),2015,22,1440,126,598,151,
+1,New Jersey Devils (NJD),2002,31,1568,130,636,182,4
+5,Pittsburgh Penguins (PIT),2010,31,1587,151,802,196,4
+15,Washington Capitals (WSH),2008,31,1622,157,635,212,4
+17,Detroit Red Wings (DET),2014,29,1488,147,418,180,12
+4,Philadelphia Flyers (PHI),2006,12,1398,119,825,247,
+53,Arizona Coyotes (ARI),2017,12,1516,117,355,148,
+25,Dallas Stars (DAL),2009,24,1748,153,576,225,
+24,Anaheim Ducks (ANA),2006,31,1628,169,881,261,4
+17,Detroit Red Wings (DET),2001,36,1659,170,660,230,1
+16,Chicago Blackhawks (CHI),2016,30,1513,140,316,153,3
+30,Minnesota Wild (MIN),2014,22,1534,129,476,162,11
+11,Atlanta Thrashers (ATL),2000,16,1408,144,939,248,
+15,Washington Capitals (WSH),2018,27,1498,168,470,147,4
+23,Vancouver Canucks (VAN),2015,20,1435,118,525,155,
+6,Boston Bruins (BOS),2016,25,1790,129,521,161,13
+7,Buffalo Sabres (BUF),2006,34,1577,190,769,281,1
+8,Montreal Canadiens (MTL),2002,21,1321,141,586,219,
+26,Los Angeles Kings (LAK),2000,23,1482,171,776,223,13
+13,Florida Panthers (FLA),2015,29,1360,130,482,167,7
+9,Ottawa Senators (OTT),2018,19,1452,156,449,143,
+54,Vegas Golden Knights (VGK),2017,33,1626,166,341,157,5
+10,Toronto Maple Leafs (TOR),2016,23,1521,144,510,146,14
+23,Vancouver Canucks (VAN),2006,28,1501,128,762,267,8
+23,Vancouver Canucks (VAN),2009,34,1611,176,846,220,5
+16,Chicago Blackhawks (CHI),2000,21,1306,137,626,197,
+12,Carolina Hurricanes (CAR),2007,25,1703,160,681,266,
+20,Calgary Flames (CGY),2010,24,1564,138,615,204,
+7,Buffalo Sabres (BUF),2003,22,1450,127,762,224,
+28,San Jose Sharks (SJS),2008,36,1623,162,604,221,1
+10,Toronto Maple Leafs (TOR),2008,18,1549,142,645,205,
+18,Nashville Predators (NSH),2018,30,1686,160,443,175,8
+20,Calgary Flames (CGY),2014,26,1332,137,380,163,16
+8,Montreal Canadiens (MTL),2010,27,1626,129,604,178,14
+15,Washington Capitals (WSH),2003,16,1265,125,761,217,
+4,Philadelphia Flyers (PHI),2016,25,1590,135,516,172,
+26,Los Angeles Kings (LAK),2002,20,1401,128,750,228,
+3,NY Rangers Rangers (NYR),2011,31,1330,130,646,163,2
+27,Phoenix Coyotes (PHX),2008,24,1386,128,668,214,
+29,Columbus Blue Jackets (CBJ),2002,20,1336,146,900,256,
+13,Florida Panthers (FLA),2001,16,1397,107,1350,226,
+30,Minnesota Wild (MIN),2016,32,1414,158,407,135,5
+28,San Jose Sharks (SJS),2010,25,1706,136,595,201,5
+20,Calgary Flames (CGY),2016,25,1517,132,612,172,15
+28,San Jose Sharks (SJS),2001,26,1471,155,841,257,5
+29,Columbus Blue Jackets (CBJ),2015,19,1455,131,639,156,
+16,Chicago Blackhawks (CHI),2002,22,1409,126,753,211,
+2,NY Islanders Islanders (NYI),2002,24,1564,143,834,254,16
+1,New Jersey Devils (NJD),2000,27,1600,175,727,175,3
+5,Pittsburgh Penguins (PIT),2013,38,1646,171,569,176,6
+22,Edmonton Oilers (EDM),2003,20,1478,131,809,223,
+24,Anaheim Ducks (ANA),2002,22,1405,126,618,223,11
+7,Buffalo Sabres (BUF),2001,22,1500,141,767,254,
+3,NY Rangers Rangers (NYR),2001,25,1648,155,1303,233,
+12,Carolina Hurricanes (CAR),2016,21,1455,124,289,141,
+15,Washington Capitals (WSH),2005,18,1429,136,919,306,
+52,Winnipeg Jets (WPG),2014,26,1499,136,697,168,14
+1,New Jersey Devils (NJD),2003,26,1466,117,525,195,9
+2,NY Islanders Islanders (NYI),2010,15,1393,118,722,188,
+11,Atlanta Thrashers (ATL),2001,13,1337,127,819,210,
+11,Atlanta Thrashers (ATL),2006,29,1591,159,766,279,12
+18,Nashville Predators (NSH),2016,24,1529,136,474,161,16
+19,St Louis Blues (STL),2016,24,1357,137,488,153,10
+7,Buffalo Sabres (BUF),2008,25,1468,141,644,215,
+1,New Jersey Devils (NJD),2006,30,1445,129,526,243,7
+12,Carolina Hurricanes (CAR),2005,36,1534,189,703,343,4
+22,Edmonton Oilers (EDM),2005,28,1530,168,809,329,14
+5,Pittsburgh Penguins (PIT),2011,28,1688,146,541,189,4
+21,Colorado Avalanche (COL),2007,27,1483,141,570,208,10
+20,Calgary Flames (CGY),2001,22,1367,126,1048,239,
+25,Dallas Stars (DAL),2008,22,1360,132,667,206,
+4,Philadelphia Flyers (PHI),2017,24,1560,141,440,169,13
+12,Carolina Hurricanes (CAR),2003,17,1509,98,702,237,
+16,Chicago Blackhawks (CHI),2003,13,1506,117,846,236,
+13,Florida Panthers (FLA),2007,22,1611,126,648,192,
+13,Florida Panthers (FLA),2018,20,1625,150,438,168,
+8,Montreal Canadiens (MTL),2013,29,1539,132,637,184,9
+19,St Louis Blues (STL),2001,29,1553,151,732,233,6
+26,Los Angeles Kings (LAK),2015,30,1572,127,530,142,8
+17,Detroit Red Wings (DET),2010,30,1620,164,442,190,6
+14,Tampa Bay Lightning (TBL),2007,20,1466,145,651,192,
+12,Carolina Hurricanes (CAR),2000,22,1292,129,733,235,2
+16,Chicago Blackhawks (CHI),2017,24,1722,148,412,183,
+14,Tampa Bay Lightning (TBL),2010,31,1645,149,565,211,8
+7,Buffalo Sabres (BUF),2015,20,1463,113,374,153,
+21,Colorado Avalanche (COL),2000,35,1493,170,706,230,1
+3,NY Rangers Rangers (NYR),2003,19,1566,135,952,200,
+18,Nashville Predators (NSH),2005,31,1462,159,921,328,6
+2,NY Islanders Islanders (NYI),2000,13,1377,115,740,238,
+11,Atlanta Thrashers (ATL),2003,21,1400,143,878,258,
+26,Los Angeles Kings (LAK),2001,25,1357,143,959,237,12
+26,Los Angeles Kings (LAK),2006,17,1743,143,769,287,
+4,Philadelphia Flyers (PHI),2005,31,1688,177,716,307,9
+3,NY Rangers Rangers (NYR),2007,24,1659,121,744,253,9
+28,San Jose Sharks (SJS),2018,29,1791,187,442,154,6
+20,Calgary Flames (CGY),2015,21,1399,125,355,155,
+25,Dallas Stars (DAL),2010,30,1356,143,763,193,
+16,Chicago Blackhawks (CHI),2005,17,1528,129,1045,277,
+12,Carolina Hurricanes (CAR),2011,18,1544,130,481,194,
+27,Phoenix Coyotes (PHX),2001,23,1426,131,722,231,11
+13,Florida Panthers (FLA),2016,21,1577,113,451,168,
+13,Florida Panthers (FLA),2005,20,1690,136,847,273,
+5,Pittsburgh Penguins (PIT),2000,25,1527,165,903,235,9
+28,San Jose Sharks (SJS),2013,34,1932,158,499,198,5
+18,Nashville Predators (NSH),2008,21,1407,115,657,201,
+1,New Jersey Devils (NJD),2009,35,1629,140,506,182,6
+4,Philadelphia Flyers (PHI),2008,26,1383,156,898,179,9
+25,Dallas Stars (DAL),2003,25,1365,112,795,215,11
+14,Tampa Bay Lightning (TBL),2006,27,1568,159,521,264,15
+14,Tampa Bay Lightning (TBL),2002,22,1473,145,728,276,12
+12,Carolina Hurricanes (CAR),2015,23,1536,123,330,156,
+16,Chicago Blackhawks (CHI),2006,18,1390,123,732,238,
+2,NY Islanders Islanders (NYI),2014,32,1628,152,445,176,10
+21,Colorado Avalanche (COL),2016,13,1304,93,514,146,
+22,Edmonton Oilers (EDM),2000,24,1351,143,886,252,12
+22,Edmonton Oilers (EDM),2018,23,1439,141,478,147,
+22,Edmonton Oilers (EDM),2007,23,1375,128,662,225,
+7,Buffalo Sabres (BUF),2013,15,1400,98,555,165,
+18,Nashville Predators (NSH),2015,24,1538,127,519,162,14
+6,Boston Bruins (BOS),2018,27,1663,145,499,161,3
+28,San Jose Sharks (SJS),2009,36,1764,182,753,214,2
+52,Winnipeg Jets (WPG),2017,30,1638,165,439,178,2
+52,Winnipeg Jets (WPG),2016,23,1526,148,529,169,
+30,Minnesota Wild (MIN),2018,26,1562,141,430,148,
+23,Vancouver Canucks (VAN),2010,31,1626,163,594,200,1
+11,Atlanta Thrashers (ATL),2005,23,1608,178,921,356,
+5,Pittsburgh Penguins (PIT),2016,30,1654,170,455,167,2
+26,Los Angeles Kings (LAK),2008,20,1398,123,701,209,
+2,NY Islanders Islanders (NYI),2001,26,1518,150,848,233,8
+15,Washington Capitals (WSH),2010,27,1621,138,620,175,2
+4,Philadelphia Flyers (PHI),2013,26,1639,147,864,203,13
+4,Philadelphia Flyers (PHI),2011,29,1558,161,746,216,6
+29,Columbus Blue Jackets (CBJ),2010,23,1476,126,705,185,
+12,Carolina Hurricanes (CAR),2001,23,1607,153,707,266,16
+3,NY Rangers Rangers (NYR),2016,31,1446,165,342,150,9
+20,Calgary Flames (CGY),2013,20,1440,124,644,171,
+16,Chicago Blackhawks (CHI),2007,23,1431,138,807,226,
+16,Chicago Blackhawks (CHI),2018,18,1599,155,409,153,
+19,St Louis Blues (STL),2013,36,1533,175,687,182,4
+18,Nashville Predators (NSH),2000,21,1455,126,603,238,
+4,Philadelphia Flyers (PHI),2002,27,1576,122,624,207,5
+29,Columbus Blue Jackets (CBJ),2007,25,1504,128,810,235,
+4,Philadelphia Flyers (PHI),2010,33,1623,173,747,191,3
+1,New Jersey Devils (NJD),2017,25,1539,144,456,155,15
+15,Washington Capitals (WSH),2011,26,1309,135,497,157,15

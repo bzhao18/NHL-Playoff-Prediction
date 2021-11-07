@@ -32,6 +32,7 @@ def logistic_pca(data, target, n_components):
     score = logreg.score(X_test, y_test)
     print('Accuracy on test data: {:.2f}'.format(score))
 
+    # Compute confusion matrix
     print('Confusion matrix:\n', confusion_matrix(y_test, y_pred))
 
     # ROC curve
