@@ -57,7 +57,7 @@ game_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols
 # Change NaN in 'injured_player_count' column to 0
 game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].fillna(0)
 game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].astype(int)
-print(game_data['total_first_half_season_goals'])
+
 # get X and y
 X = game_data.loc[:, game_data.columns != 'end_season_playoff_standing']
 y = game_data.loc[:, game_data.columns == 'end_season_playoff_standing']
