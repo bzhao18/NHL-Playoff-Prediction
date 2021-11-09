@@ -2,14 +2,10 @@ import pandas as pd
 import numpy as np
 import math
 import random
-import statsmodels as sm
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, roc_curve, auc
-from sklearn.model_selection import train_test_split
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-
-from sklearn.preprocessing import MinMaxScaler
 
 # Transform data using PCA and use transformed data for logistic regression
 def logistic_pca(data, n_components):
