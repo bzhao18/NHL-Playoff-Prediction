@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix, roc_curve, auc
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
-# Transform data using PCA and use transformed data for logistic regression
+# Transform data using PCA to be used for Logistic Regression to predict standings
 def logistic_pca(data, n_components):
     # Sample .2 (round up) number of seasons
     seasons = set(data['season'])
