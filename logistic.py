@@ -6,6 +6,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 
+# Script for general use of Logistic Regression
+
 # TODO: Use pre-processed data from pca.py
 
 # Get numerical data from game_stats.csv. Skip team_id.
@@ -17,7 +19,7 @@ game_data['won'] = game_data['won'].astype(int)
 # Change NaN in 'injured_player_count' column to 0
 game_data['injured_player_count'] = game_data['injured_player_count'].fillna(0)
 
-# TODO: Split data into training and testing data by first and second half of the season.
+# TODO: Split data into training and testing data appropriately for the project.
 X = game_data.loc[:, game_data.columns != 'won'] # Data
 y = game_data.loc[:, game_data.columns == 'won'] # Data's labels
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
@@ -49,7 +51,7 @@ logit_model = sm.Logit(y, X)
 result = logit_model.fit()
 print(result.summary2())
 
-# Link removed any insignificant feature having p-value >= .05 at this point (P>|z| column)
+# Link removed any insignificant feature having p-value >= .05 at this point (P>|z| column) then reran model implementation above
 # Note: game_data features are all significant (game_stats.csv version on 10/30/21)
 
 # Logistic Regression Classifier Model Fitting
@@ -66,5 +68,3 @@ print('Confusion matrix:\n', confusion_matrix(y_test, y_pred))
 # Link calculates precision, recall, F-measure, and support at this point
 
 # Link plots receiver operating characteristic (ROC) curve at this point
-
-# TODO: Utilize y_pred to determine predicted playoff bracket rankings
