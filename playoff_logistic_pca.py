@@ -11,12 +11,13 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 # Transform data using PCA to be used for Logistic Regression to predict making it to the playoffs
+# TODO: Dynamic retrieval of n_componenets from PCA
 def logistic_pca(data, n_components):
-    # Sample .2 (round up) number of seasons
+    # Sample 20% number (round up) of seasons
     seasons = set(data['season'])
     num_seasons = len(seasons)
     num_test_seasons = math.ceil(num_seasons * .2)
-    random.seed(150) # Uncomment to get same sample. Change seed value to get different sample
+    random.seed(150) # Uncomment to get same sample. Change seed value to get different sample.
     test_seasons = random.sample(seasons, num_test_seasons)
     print("Test seasons are:", test_seasons)
 
@@ -29,9 +30,9 @@ def logistic_pca(data, n_components):
     X_test = X_test.drop('end_season_playoff_standing', 1)
     print("Proportion training: {0:.4f} | Proportion testing: {1:.4f}".format(X_train.shape[0] / data.shape[0], X_test.shape[0] / data.shape[0]))
 
-    # Info on current balance of standings
+    # Print info on current balance of standings
     balance_info(X_train, y_train)
-    # Balance data to have equal win and loss rows
+    # Balance data to have equal number of rows for making it the playoffs and not
     oversample = SMOTE(random_state=0)
     oversample_X_train, oversample_y_train = oversample.fit_resample(X_train, y_train)
     X_train = pd.DataFrame(data=oversample_X_train, columns=X_train.columns)
@@ -50,26 +51,25 @@ def logistic_pca(data, n_components):
     X_train = pca.transform(X_train)
     X_test = pca.transform(X_test)
 
-    # # Remove insignificant dimensions of p-value >= .05 (P>|z| column).
-    # summary = logit_model_summary(X_train, y_train) # Model implementation
-    # # print(summary)
-    # p_values = summary.tables[1]['P>|z|']
-    # remove_dim_bool, dims_to_remove = check_insignificant(p_values)
-    # while remove_dim_bool:
-    #     X_train = np.delete(X_train, dims_to_remove, axis=1)
-    #     X_test = np.delete(X_test, dims_to_remove, axis=1)
-    #     summary = logit_model_summary(X_train, y_train)
-    #     p_values = summary.tables[1]['P>|z|']
-    #     remove_dim_bool, dims_to_remove = check_insignificant(p_values)
+    # Remove insignificant PCA dimensions of p-value >= .05.
+    summary = logit_model_summary(X_train, y_train) # statsmodels.api's Logistic Regression
+    # print(summary)
+    p_values = summary.tables[1]['P>|z|']
+    remove_dim_bool, dims_to_remove = check_insignificant(p_values)
+    while remove_dim_bool:
+        print("Removing PCA dimensions at indices:", dims_to_remove)
+        X_train = np.delete(X_train, dims_to_remove, axis=1)
+        X_test = np.delete(X_test, dims_to_remove, axis=1)
+        summary = logit_model_summary(X_train, y_train)
+        p_values = summary.tables[1]['P>|z|']
+        remove_dim_bool, dims_to_remove = check_insignificant(p_values)
 
-    # Logistic Regression
+    # sklearn.linear_model's Logistic Regression
     logreg = LogisticRegression()
     logreg.fit(X_train, np.ravel(y_train))
 
     # Predict test data labels
     y_pred = logreg.predict(X_test)
-    print("Predicted", y_pred)
-    print("Actual", y_test)
     score = logreg.score(X_test, y_test)
     print('Accuracy on test data: {:.2f}'.format(score))
 
@@ -77,7 +77,7 @@ def logistic_pca(data, n_components):
     print('Confusion matrix:\n', confusion_matrix(y_test, y_pred))
 
     # ROC curve
-    fpr, tpr, thresholds = roc_curve(y_test, y_pred, pos_label=16)
+    fpr, tpr, thresholds = roc_curve(y_test, y_pred)
     roc_auc = auc(fpr, tpr)
     print("ROC Area Under the Curve (AUC): %0.2f" % roc_auc)
     plt.plot(fpr, tpr, label='ROC curve (area = %0.2f)' % roc_auc)
@@ -92,11 +92,14 @@ def logistic_pca(data, n_components):
 
     # See link in logistic.py to implement other measurements like precision, recall, F-measure, and support
 
+# Print the current balance of data rows that do an do not make it to the playoffs
 def balance_info(X_train, y_train):
     playoff_rows = y_train[y_train == 1].shape[0]
     no_playoff_rows = y_train[y_train == 0].shape[0]
     print("Rows: {}. Playoffs: {}. No playoffs: {}. ".format(X_train.shape[0], playoff_rows, no_playoff_rows))
-    
+
+# For any p-value p of a PCA dimension, if p >= .05, then add the dimension index to a list of indices of
+# dimensions to be removed
 def check_insignificant(p_values):
     removed_dim_bool = False
     dims_to_remove = []
@@ -104,10 +107,9 @@ def check_insignificant(p_values):
         if p >= .05:
             dims_to_remove.append(index)
             removed_dim_bool = True
-    print(dims_to_remove)
     return removed_dim_bool, dims_to_remove
 
-# Model implementation
+# Get summary statistics of statsmodels.api's Logistic Regression
 def logit_model_summary(X_train, y_train):
     logit_model = sm.Logit(y_train, X_train)
     result = logit_model.fit()

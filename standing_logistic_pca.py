@@ -11,11 +11,11 @@ from sklearn.preprocessing import StandardScaler
 
 # Transform data using PCA to be used for Logistic Regression to predict standings
 def logistic_pca(data, n_components):
-    # Sample .2 (round up) number of seasons
+    # Sample 20% number (round up) of seasons
     seasons = set(data['season'])
     num_seasons = len(seasons)
     num_test_seasons = math.ceil(num_seasons * .2)
-    # random.seed(150) # Uncomment to get same sample. Change seed value to get different sample
+    # random.seed(150) # Uncomment to get same sample. Change seed value to get different sample.
     test_seasons = random.sample(seasons, num_test_seasons)
     print("Test seasons are:", test_seasons)
 
@@ -28,9 +28,9 @@ def logistic_pca(data, n_components):
     X_test = X_test.drop('end_season_playoff_standing', 1)
     print("Proportion training: {0:.4f} | Proportion testing: {1:.4f}".format(X_train.shape[0] / data.shape[0], X_test.shape[0] / data.shape[0]))
 
-    # Info on current balance of standings
+    # Print info on current balance of standings
     balance_info(X_train, y_train)
-    # Balance data to have equal win and loss rows
+    # Balance data to have equal number of rows for each standing (0-16)
     oversample = SMOTE(random_state=0)
     oversample_X_train, oversample_y_train = oversample.fit_resample(X_train, y_train)
     X_train = pd.DataFrame(data=oversample_X_train, columns=X_train.columns)
@@ -57,7 +57,7 @@ def logistic_pca(data, n_components):
     # result = logit_model.fit()
     # print(result.summary2())
 
-    # Logistic Regression
+    # sklearn.linear_model's Logistic Regression
     logreg = LogisticRegression()
     logreg.fit(X_train, np.ravel(y_train))
 
@@ -86,6 +86,7 @@ def logistic_pca(data, n_components):
 
     # See link in logistic.py to implement other measurements like precision, recall, F-measure, and support
 
+# Print the current balance of rows respective to each standing (0-16)
 def balance_info(X_train, y_train):
     standing_1_rows = y_train[y_train == 1].shape[0]
     standing_2_rows = y_train[y_train == 2].shape[0]
