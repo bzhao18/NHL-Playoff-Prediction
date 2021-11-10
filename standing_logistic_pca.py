@@ -63,7 +63,7 @@ def logistic_pca(data, n_components):
 
     # Predict test data labels
     y_pred = logreg.predict(X_test)
-    print(y_pred)
+    # print(y_pred)
     score = logreg.score(X_test, y_test)
     print('Accuracy on test data: {:.2f}'.format(score))
 
