@@ -10,6 +10,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 # Transform data using PCA to be used for Logistic Regression to predict standings
+# Note: Not recommended approach as Logistic Regression is meant for data with labels that are 0s and 1s
 def logistic_pca(data, n_components):
     # Sample 20% number (round up) of seasons
     seasons = set(data['season'])
