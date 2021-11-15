@@ -14,6 +14,9 @@ game_data_columns = ['team_id', 'game_id', 'won', 'goals', 'shots', 'pim', 'powe
 goalie_data_columns = ['game_id', 'team_id', 'player_id', 'timeOnIce', 'shots', 'saves', 'savePercentage']
 skater_data_columns = ['game_id', 'team_id', 'player_id', 'timeOnIce', 'assists', 'goals', 'shots', 'penaltyMinutes']
 
+first_half_columns = ['team_id', 'season', 'total_first_half_season_wins', 'total_first_half_season_shots', 'total_first_half_season_goals', \
+'total_first_half_season_pim', 'total_first_half_season_powerPlayOpportunities']
+
 # reading in csv files
 game_data = pd.read_csv("cleaned_data/game_stats.csv", usecols=game_data_columns)
 # changing 'won' column from boolean to int type
@@ -25,6 +28,9 @@ goalie_data = pd.read_csv("cleaned_data/goalie_stats.csv", usecols=goalie_data_c
 goalie_data['savePercentage'] = goalie_data['savePercentage'].fillna(0)
 
 skater_data = pd.read_csv("cleaned_data/skater_stats.csv", usecols=skater_data_columns)
+
+# first_half_season_summary.csv file
+first_half = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=first_half_columns)
 
 # The visualize function can also be used on the pre-PCA data. However, this will take a bit to run.
 # v.visualizeComponents(data=np.array(game_data), labels=game_data_columns)
@@ -108,10 +114,26 @@ scaling3.fit(df3)
 Scaled_data3 = scaling3.transform(df3)
 # set n_components to number of PCA components that we want
 principal3 = PCA(n_components=5)
-principal3.fit(Scaled_data1)
+principal3.fit(Scaled_data3)
 x3 = principal3.transform(Scaled_data3)
 print(x3.shape)
 
 print(principal3.components_)
 
 # v.visualizeComponents(data=x3)  # Slow because there are a lot of data points
+
+
+## 5 components for first_half_season_summary.csv
+df4 = pd.DataFrame(first_half)
+scaling4 = StandardScaler()
+scaling4.fit(df4)
+Scaled_data4 = scaling4.transform(df4)
+# set n_components to number of PCA components that we want
+principal4 = PCA(n_components=5)
+principal4.fit(Scaled_data4)
+x4 = principal4.transform(Scaled_data4)
+print(x4.shape)
+
+print(principal4.components_)
+
+# v.visualizeComponents(data=x4)  # Slow because there are a lot of data points
