@@ -68,9 +68,9 @@ Confusion matrices are used in order to evaluate classification problems. In the
 Although we were able to obtain a high value for our accuracy, we have a lot of adjustments to make for the problem we proposed. First of all, there are a lot of features we removed that we would like to add back into our dataset. We removed this data to simplify this initial model, but we need to add it back to make our model comprehensive. Another next step would be to actually predict the rankings of each team. This complicates our model because it means we would no longer be using binary classification but rather multiclass classification over 17 classes indicating a team’s season ranking. A 0 value would indicate that the team did not make it to the playoffs that season. Furthermore, we want to explore creating another supervised learning model (such as Neural Networks) that is better suited for multiclass classification. We would like to see if there is a better model than the one we have created for our problem definition. 
 
 ### References
-[1]     J. Weissbock, H. Viktor, and D. Inkpen, “Use of Performance Metrics to Forecast Success in the National Hockey League,” p. 10.
-[2]	    J. J. Heyne, A. J. Fenn, and S. Brook, “NHL Team Production,” Social Science Research Network, Rochester, NY, SSRN Scholarly Paper ID 942856, Oct. 2006. doi: 10.2139/ssrn.942856.
-[3]	    R. Bunker and T. Susnjak, “The Application of Machine Learning Techniques for Predicting Results in Team Sport: A Review,” ArXiv191211762 Cs Stat, Dec. 2019, Accessed: Oct. 03, 2021. [Online]. Available: http://arxiv.org/abs/1912.11762
-[4]	    Mikulski, B. (2019, June 3). PCA - how to choose the number of components? https://www.mikulskibartosz.name/pca-how-to-choose-the-number-of-components/ (accessed Nov. 15, 2021)
-[5]	    “NHL Hockey Standings,” NHL.com. https://www.nhl.com/standings (accessed Nov. 15, 2021).
-[6]	    E. Zdravevski and A. Kulakov, “System for Prediction of the Winner in a Sports Game,” ICT Innov. 2009, pp. 55–63.
+[1]     J. Weissbock, H. Viktor, and D. Inkpen, “Use of Performance Metrics to Forecast Success in the National Hockey League,” p. 10.\\
+[2]	    J. J. Heyne, A. J. Fenn, and S. Brook, “NHL Team Production,” Social Science Research Network, Rochester, NY, SSRN Scholarly Paper ID 942856, Oct. 2006. doi: 10.2139/ssrn.942856.\\
+[3]	    R. Bunker and T. Susnjak, “The Application of Machine Learning Techniques for Predicting Results in Team Sport: A Review,” ArXiv191211762 Cs Stat, Dec. 2019, Accessed: Oct. 03, 2021. [Online]. Available: http://arxiv.org/abs/1912.11762 \\
+[4]	    Mikulski, B. (2019, June 3). PCA - how to choose the number of components? https://www.mikulskibartosz.name/pca-how-to-choose-the-number-of-components/ (accessed Nov. 15, 2021) \\
+[5]	    “NHL Hockey Standings,” NHL.com. https://www.nhl.com/standings (accessed Nov. 15, 2021). \\
+[6]	    E. Zdravevski and A. Kulakov, “System for Prediction of the Winner in a Sports Game,” ICT Innov. 2009, pp. 55–63. \\
