@@ -44,11 +44,11 @@ first_half_modified = pd.read_csv("cleaned_data_v3/first_half_season_summary_mod
                                   usecols=first_half_columns_modified)
 
 # The visualize function can also be used on the pre-PCA data. However, this will take a bit to run.
-v.visualizeComponents(data=np.array(game_data), labels=game_data_columns, title='Pre-PCA Game Data')
-v.visualizeComponents(data=np.array(goalie_data), labels=goalie_data_columns, title='Pre-PCA Goalie Data')
-v.visualizeComponents(data=np.array(skater_data), labels=skater_data_columns, title='Pre-PCA Skater Data')
-v.visualizeComponents(data=np.array(first_half_modified), labels=first_half_columns_modified,
-                      title='First Half Season Summary Data')
+# v.visualizeComponents(data=np.array(game_data), labels=game_data_columns, title='Pre-PCA Game Data')
+# v.visualizeComponents(data=np.array(goalie_data), labels=goalie_data_columns, title='Pre-PCA Goalie Data')
+# v.visualizeComponents(data=np.array(skater_data), labels=skater_data_columns, title='Pre-PCA Skater Data')
+# v.visualizeComponents(data=np.array(first_half_modified), labels=first_half_columns_modified,
+#                       title='First Half Season Summary Data')
 # -------------------------------------------------------------------------------------------------------------- #
 ## finding the correct number of components to get for each dataset 
 ## plots graph of variance vs components 
@@ -102,7 +102,7 @@ print(x1.shape)
 
 print(principal1.components_)
 
-v.visualizeComponents(data=x1, title='Post-PCA Game Data')
+# v.visualizeComponents(data=x1, title='Post-PCA Game Data')
 
 ## 4 components for goalie_stats.csv
 df2 = pd.DataFrame(game_data)
@@ -117,7 +117,7 @@ print(x2.shape)
 
 print(principal2.components_)
 
-v.visualizeComponents(data=x2, title='Post-PCA Goalie Data')
+# v.visualizeComponents(data=x2, title='Post-PCA Goalie Data')
 
 ## 5 components for skater_stats.csv
 df3 = pd.DataFrame(skater_data)
@@ -132,7 +132,7 @@ print(x3.shape)
 
 print(principal3.components_)
 
-v.visualizeComponents(data=x3, title='Post-PCA Skater Data')  # Slow because there are a lot of data points
+# v.visualizeComponents(data=x3, title='Post-PCA Skater Data')  # Slow because there are a lot of data points
 
 ## 5 components for first_half_season_summary.csv
 df4 = pd.DataFrame(first_half)
@@ -147,4 +147,4 @@ print(x4.shape)
 
 print(principal4.components_)
 
-v.visualizeComponents(data=x4, title='Post-PCA First Half Season Data')  # Slow because there are a lot of data points
+# v.visualizeComponents(data=x4, title='Post-PCA First Half Season Data')  # Slow because there are a lot of data points
