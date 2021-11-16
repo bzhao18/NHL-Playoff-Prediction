@@ -6,16 +6,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def visualizeComponents(data: np.array, labels=None):
+def visualizeComponents(data: np.array, labels=None, title='Data Visualization'):
     # Get number of component (features) from data, this will determine the grid for our figure
     row, components = np.shape(data)
 
     # Will have some extra empty plots but they will be removed later
     fig, axes = plt.subplots(components - 1, components - 1)
-    figSize = 4.5 * components - 1
+    figSize = 4.85 * components - 1
     # Important so that scaling adapts to the number of plots we are creating
     fig.set_size_inches(figSize, figSize)
-    fig.suptitle('Data Visualization', fontsize=30, fontweight='bold')
+    fig.suptitle(title, fontsize=30, fontweight='bold')
     fig.set_dpi(100)
 
     # Iterate over principal components and plot them
@@ -36,14 +36,17 @@ def visualizeComponents(data: np.array, labels=None):
                 yLabel = labels[j]
 
             # Gives random colors to plots
-            color = np.random.rand(1, 4)
+            # randomColors = np.random.rand(1, 4)
             # Setting for the alpha (transparency)
             # Having this at a lower rate will allow us more easily recognize overlapping data points and density patterns
-            color[0, 3] = 0.1
-            # color = 'b' uncomment this to make all the same color blue
+            # randomColors[0, 3] = 0.1
+
+            blueColor = np.zeros((1, 4))
+            blueColor[0, 2] = 1  # Sets the RGB value for blue
+            blueColor[0, 3] = 0.4  # Sets the alpha value (transparency)
 
             # Create scatter plot and add labels to it
-            axes[i, j - 1 - i].scatter(xPC, yPC, s=5, c=color)
+            axes[i, j - 1 - i].scatter(xPC, yPC, s=5, c=blueColor)
             axes[i, j - 1 - i].set_xlabel(xLabel, fontsize=12.5, fontweight='bold')
             axes[i, j - 1 - i].set_ylabel(yLabel, fontsize=12.5, fontweight='bold')
 

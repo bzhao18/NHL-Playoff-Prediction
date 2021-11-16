@@ -13,17 +13,17 @@ In the NHL, the winner of a game boils down to whichever team scores more goals.
 
 The dataset was sourced from Kaggle and consists of 9 different tables that track game-by-game, overall team, individual player, and other statistics across NHL seasons dating back to the 2000-01 season [3]. These tables were trimmed of non-numeric data as well as incomplete seasons including the 2004-05 and 2012-13 seasons which were shortened due to labor lockouts and the recent 2019-20 and 2020-21 seasons which were affected by COVID. Since the goal of this project is to predict playoff standings using only data from the first half of a season, data after the month of January was discarded. From there, the remaining data was combined into three tables organized by game-by-game, player, and goalie statistics. Also, for this midterm report, it is important to note that a smaller subset of features were selected for faster model development. In the final report, more features will be included. Figure 1 visualizes two features from goalie data, and Figure 2 visualizes two features from player data. 
 
-| ![Figure 1](/images/figure_1.png) | 
+| ![Figure 1](./images/figure_1.png) | 
 |:--:| 
 | *Figure 1: Shows us the correlation between the time a goalie spent on ice and the amount of saves that make. The graphic makes sense. The longer the goalie is on ice, the more shots they are able to save.* |
 
-| ![Figure 2](/images/figure_2.png) | 
+| ![Figure 2](./images/figure_2.png) | 
 |:--:| 
 | *Figure 2: The relationship between the penalty minutes and the number of shots a skater can take. Again, this figure seems logical. If a skater spends a lot of time sitting out in penalty, then they are not able to take as many shots as if they were on ice.* |
 
-The game-by-game data is most relevant to the goal of this project, and it is what has been most utilized in the project so far. To transform the game-by-game data into a usable form for a model, the various metrics were summed for each team each season, resulting in summary statistics for every team in the first half of every season. Labels were manually procured from online by tabulating the standings of the top 16 teams for every season, and these labels were appended to the summary statistics table [4]. The visualization of this data is shown in the figure below. 
+The game-by-game data is most relevant to the goal of this project, and it is what has been most utilized in the project so far. To transform the game-by-game data into a usable form for a model, the various metrics were summed for each team each season, resulting in summary statistics for every team in the first half of every season. Labels were manually procured from online by tabulating the standings of the top 16 teams for every season, and these labels were appended to the summary statistics table [5]. The visualization of this data is shown in the figure below.
 
-| ![Figure 3](/images/figure_3.png) | 
+| ![Figure 3](./images/figure_3.png) | 
 |:--:| 
 | *Figure 3: Visualization of the summary of all data over the first half of the season.* |
 
@@ -34,9 +34,9 @@ The temporary change in our problem definition required altering the dataset as 
 
 For dimensionality reduction, we decided on implementing PCA with our project. Before doing anything with PCA, we had to make sure that we were only inputting numerical data. One of the first tasks was to make sure we were only reading the columns of that dataset that had numbers. The other important task to do before the actual PCA implementation was to find the correct number of components we wanted to reduce our dataset down to. There is a parameter for PCA method in the sklearn library that requests for the specific number of components we want to reduce to, so in order to find the exact number, we plotted the variance against the number of components.
 
-| ![Figure 4](/images/figure_4.png) | 
+| ![Figure 4](./images/figure_4.png) | 
 |:--:| 
-| *Figure 4: When plotting the variance of the input against the number of components, we typically looked for a variance that was around 95% [5]. So, wherever it passes the threshold, is the number of components we should use for PCA.* |
+| *Figure 4: When plotting the variance of the input against the number of components, we typically looked for a variance that was around 95%[4]. So, wherever it passes the threshold, is the number of components we should use for PCA.* |
 
 After finding the correct number of components to reduce down to, we then moved towards implementing PCA on our datasets. As stated previously, with the help of the sklearn library, we were able to successfully implement PCA on our datasets. We were able to do so by simply inputting the number of components we had found earlier for a given dataset. There is a check after PCA for any dimensions that have a p-value greater than or equal to .05. If there is such a dimension(s), it is removed since it is insignificant.
 
@@ -54,22 +54,22 @@ After creating our model, we ran our model on several training and testing data 
 
 In order to evaluate the results of our model, we used 4 different metrics: accuracy, ROC, area under the ROC curve (AUC), and confusion matrix. As stated before, we got an accuracy of 82% (true positive rate at ideal threshold) and the AUC was also 82%. To determine this, we used the false positive and true positive rate. Moreover, it was determined through the ROC curve that out of possible thresholds 0,1, and 2, 1 is the most ideal threshold for our model.
 
-| ![Figure 6](/images/figure_6.png) | 
+| ![Figure 6](./images/figure_6.png) | 
 |:--:| 
-| *Figure 5: ROC curve for threshold 1.* |
+| *Figure 6: ROC curve for threshold 1.* |
 
-| ![Figure 7](/images/figure_7.png) | 
+| ![Figure 7](./images/figure_7.png) | 
 |:--:| 
-| *Figure 6: Confusion matrix produced by our model.* |
+| *Figure 7: Confusion matrix produced by our model.* |
 
 Confusion matrices are used in order to evaluate classification problems. In the one created by our model, it can be assumed that our model is doing well because we have minimized the number of false negatives and false positives. 
 
 Although we were able to obtain a high value for our accuracy, we have a lot of adjustments to make for the problem we proposed. First of all, there are a lot of features we removed that we would like to add back into our dataset. We removed this data to simplify this initial model, but we need to add it back to make our model comprehensive. Another next step would be to actually predict the rankings of each team. This complicates our model because it means we would no longer be using binary classification but rather multiclass classification over 17 classes indicating a team’s season ranking. A 0 value would indicate that the team did not make it to the playoffs that season. Furthermore, we want to explore creating another supervised learning model (such as Neural Networks) that is better suited for multiclass classification. We would like to see if there is a better model than the one we have created for our problem definition. 
 
 ### References
-[1]     J. Weissbock, H. Viktor, and D. Inkpen, “Use of Performance Metrics to Forecast Success in the National Hockey League,” p. 10.
-[2]	    J. J. Heyne, A. J. Fenn, and S. Brook, “NHL Team Production,” Social Science Research Network, Rochester, NY, SSRN Scholarly Paper ID 942856, Oct. 2006. doi: 10.2139/ssrn.942856.
-[3]	    R. Bunker and T. Susnjak, “The Application of Machine Learning Techniques for Predicting Results in Team Sport: A Review,” ArXiv191211762 Cs Stat, Dec. 2019, Accessed: Oct. 03, 2021. [Online]. Available: http://arxiv.org/abs/1912.11762
-[4]	    Mikulski, B. (2019, June 3). PCA - how to choose the number of components? https://www.mikulskibartosz.name/pca-how-to-choose-the-number-of-components/ (accessed Nov. 15, 2021)
-[5]	    “NHL Hockey Standings,” NHL.com. https://www.nhl.com/standings (accessed Nov. 15, 2021).
-[6]	    E. Zdravevski and A. Kulakov, “System for Prediction of the Winner in a Sports Game,” ICT Innov. 2009, pp. 55–63.
+[1]     J. Weissbock, H. Viktor, and D. Inkpen, “Use of Performance Metrics to Forecast Success in the National Hockey League,” p. 10.\\
+[2]	    J. J. Heyne, A. J. Fenn, and S. Brook, “NHL Team Production,” Social Science Research Network, Rochester, NY, SSRN Scholarly Paper ID 942856, Oct. 2006. doi: 10.2139/ssrn.942856.\\
+[3]	    R. Bunker and T. Susnjak, “The Application of Machine Learning Techniques for Predicting Results in Team Sport: A Review,” ArXiv191211762 Cs Stat, Dec. 2019, Accessed: Oct. 03, 2021. [Online]. Available: http://arxiv.org/abs/1912.11762 \\
+[4]	    Mikulski, B. (2019, June 3). PCA - how to choose the number of components? https://www.mikulskibartosz.name/pca-how-to-choose-the-number-of-components/ (accessed Nov. 15, 2021) \\
+[5]	    “NHL Hockey Standings,” NHL.com. https://www.nhl.com/standings (accessed Nov. 15, 2021). \\
+[6]	    E. Zdravevski and A. Kulakov, “System for Prediction of the Winner in a Sports Game,” ICT Innov. 2009, pp. 55–63. \\
