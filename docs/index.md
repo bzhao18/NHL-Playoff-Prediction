@@ -1,4 +1,4 @@
-## Group 2 Project Proposal - NHL Playoff Predictor
+## Group 2 Project Midterm Report - NHL Playoff Predictor
 Bryan Zhao, Karishma Sabnani, Timothy Bang, Gabrielle Germanson, Noah Wallace
 
 ### Introduction/Background
