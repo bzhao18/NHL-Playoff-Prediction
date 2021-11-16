@@ -55,11 +55,11 @@ After creating our model, we ran our model on several training and testing data 
 
 In order to evaluate the results of our model, we used 4 different metrics: accuracy, ROC, area under the ROC curve (AUC), and confusion matrix. As stated before, we got an accuracy of 82% (true positive rate at ideal threshold) and the AUC was also 82%. To determine this, we used the false positive and true positive rate. Moreover, it was determined through the ROC curve that out of possible thresholds 0,1, and 2, 1 is the most ideal threshold for our model.
 
-| ![Figure 6](/images/figure_5.png) | 
+| ![Figure 6](./images/figure_5.png) | 
 |:--:| 
 | *Figure 6: ROC curve for threshold 1.* |
 
-| ![Figure 7](/images/figure_6.png) | 
+| ![Figure 7](./images/figure_6.png) | 
 |:--:| 
 | *Figure 7: Confusion matrix produced by our model.* |
 
