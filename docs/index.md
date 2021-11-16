@@ -13,7 +13,7 @@ In the NHL, the winner of a game boils down to whichever team scores more goals.
 
 The dataset was sourced from Kaggle and consists of 9 different tables that track game-by-game, overall team, individual player, and other statistics across NHL seasons dating back to the 2000-01 season [3]. These tables were trimmed of non-numeric data as well as incomplete seasons including the 2004-05 and 2012-13 seasons which were shortened due to labor lockouts and the recent 2019-20 and 2020-21 seasons which were affected by COVID. Since the goal of this project is to predict playoff standings using only data from the first half of a season, data after the month of January was discarded. From there, the remaining data was combined into three tables organized by game-by-game, player, and goalie statistics. Also, for this midterm report, it is important to note that a smaller subset of features were selected for faster model development. In the final report, more features will be included. Figure 1 visualizes two features from goalie data, and Figure 2 visualizes two features from player data. 
 
-| ![Figure 1](/images/figure_1.png) | 
+| ![Figure 1](./images/figure_1.png) | 
 |:--:| 
 | *Figure 1: Shows us the correlation between the time a goalie spent on ice and the amount of saves that make. The graphic makes sense. The longer the goalie is on ice, the more shots they are able to save.* |
 
