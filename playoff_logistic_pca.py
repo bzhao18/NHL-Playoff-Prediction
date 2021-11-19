@@ -9,6 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, roc_curve, auc
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
+import csv
 
 # Transform data using PCA to be used for Logistic Regression to predict making it to the playoffs
 # TODO: Dynamic retrieval of n_componenets from PCA
@@ -20,6 +21,7 @@ def logistic_pca(data, n_components):
     random.seed(150) # Uncomment to get same sample. Change seed value to get different sample.
     test_seasons = random.sample(seasons, num_test_seasons)
     print("Test seasons are:", test_seasons)
+    
 
     # Split data into training and test sets
     X_train = data.loc[~data['season'].isin(test_seasons)]
@@ -28,6 +30,8 @@ def logistic_pca(data, n_components):
     y_test = X_test.loc[:, 'end_season_playoff_standing']
     X_train = X_train.drop('end_season_playoff_standing', 1)
     X_test = X_test.drop('end_season_playoff_standing', 1)
+    # write x_test to csv file
+    # X_test.to_csv('x_test.csv')
     print("Proportion training: {0:.4f} | Proportion testing: {1:.4f}".format(X_train.shape[0] / data.shape[0], X_test.shape[0] / data.shape[0]))
 
     # Print info on current balance of standings
@@ -38,13 +42,14 @@ def logistic_pca(data, n_components):
     X_train = pd.DataFrame(data=oversample_X_train, columns=X_train.columns)
     y_train = pd.DataFrame(data=oversample_y_train, columns=['end_season_playoff_standing'])
     balance_info(X_train, y_train)
+    
 
     # Standardize data
     scaler = StandardScaler()
     scaler.fit(X_train)
     X_train = scaler.transform(X_train)
     X_test = scaler.transform(X_test)
-
+    
     # PCA
     pca = PCA(n_components=n_components)
     pca.fit(X_train)
@@ -75,6 +80,17 @@ def logistic_pca(data, n_components):
 
     # Confusion matrix
     print('Confusion matrix:\n', confusion_matrix(y_test, y_pred))
+
+    # # append probabilites to x_test.csv for each column
+    # probabilities = logreg.predict_proba(X_test)
+    # with open('x_test.csv', 'a') as csvfile:
+    #     writer = csv.writer(csvfile)
+    #     # add 2 columns for probabilities
+    #     writer.writerow(['prob_no_playoffs', 'prob_playoffs'])
+    #     for row in probabilities:
+    #         writer.writerow(row)
+
+    
 
     # ROC curve
     fpr, tpr, thresholds = roc_curve(y_test, y_pred)
@@ -120,6 +136,18 @@ game_data_columns = ['team_id','season','total_first_half_season_wins','total_fi
 game_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=game_data_columns)
 game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].fillna(0) # Change NaNs to 0
 game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].astype(int)
+
+test_seasons = [2008, 2010, 2000, 2013]
+true_standings = game_data.loc[game_data['season'].isin(test_seasons)]
+true_standings = true_standings.loc[:, 'end_season_playoff_standing']
+# add true standings to x_test.csv
+# with open('x_test.csv', 'a') as csvfile:
+#     writer = csv.writer(csvfile)
+#     writer.writerow(['true_standings'])
+#     for row in true_standings:
+#         writer.writerow([row])
 game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].mask(game_data['end_season_playoff_standing'] > 0, 1)
+
+
 
 logistic_pca(game_data, 5)
