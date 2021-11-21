@@ -13,9 +13,9 @@ import csv
 
 # Transform data using PCA to be used for Logistic Regression to predict making it to the playoffs
 # TODO: Dynamic retrieval of n_componenets from PCA
-def logistic_pca(data, n_components):
+def logistic_pca(data, n_components, season_col, standing_col):
     # Sample 20% number (round up) of seasons
-    seasons = set(data['season'])
+    seasons = set(data[season_col])
     num_seasons = len(seasons)
     num_test_seasons = math.ceil(num_seasons * .2)
     random.seed(150) # Uncomment to get same sample. Change seed value to get different sample.
@@ -24,12 +24,12 @@ def logistic_pca(data, n_components):
     
 
     # Split data into training and test sets
-    X_train = data.loc[~data['season'].isin(test_seasons)]
-    X_test = data.loc[data['season'].isin(test_seasons)]
-    y_train = X_train.loc[:, 'end_season_playoff_standing']
-    y_test = X_test.loc[:, 'end_season_playoff_standing']
-    X_train = X_train.drop('end_season_playoff_standing', 1)
-    X_test = X_test.drop('end_season_playoff_standing', 1)
+    X_train = data.loc[~data[season_col].isin(test_seasons)]
+    X_test = data.loc[data[season_col].isin(test_seasons)]
+    y_train = X_train.loc[:, standing_col]
+    y_test = X_test.loc[:, standing_col]
+    X_train = X_train.drop(standing_col, 1)
+    X_test = X_test.drop(standing_col, 1)
     # write x_test to csv file
     # X_test.to_csv('x_test.csv')
     print("Proportion training: {0:.4f} | Proportion testing: {1:.4f}".format(X_train.shape[0] / data.shape[0], X_test.shape[0] / data.shape[0]))
@@ -40,7 +40,7 @@ def logistic_pca(data, n_components):
     oversample = SMOTE(random_state=0)
     oversample_X_train, oversample_y_train = oversample.fit_resample(X_train, y_train)
     X_train = pd.DataFrame(data=oversample_X_train, columns=X_train.columns)
-    y_train = pd.DataFrame(data=oversample_y_train, columns=['end_season_playoff_standing'])
+    y_train = pd.DataFrame(data=oversample_y_train, columns=[standing_col])
     balance_info(X_train, y_train)
     
 
@@ -81,9 +81,9 @@ def logistic_pca(data, n_components):
     # Confusion matrix
     print('Confusion matrix:\n', confusion_matrix(y_test, y_pred))
 
-    # # append probabilites to x_test.csv for each column
+    # append probabilites to x_test.csv for each column
     # probabilities = logreg.predict_proba(X_test)
-    # with open('x_test.csv', 'a') as csvfile:
+    # with open('season_avg.csv', 'a') as csvfile:
     #     writer = csv.writer(csvfile)
     #     # add 2 columns for probabilities
     #     writer.writerow(['prob_no_playoffs', 'prob_playoffs'])
@@ -131,23 +131,52 @@ def logit_model_summary(X_train, y_train):
     result = logit_model.fit()
     return result.summary2()
 
-# Read in data
-game_data_columns = ['team_id','season','total_first_half_season_wins','total_first_half_season_shots','total_first_half_season_goals','total_first_half_season_pim','total_first_half_season_powerPlayOpportunities','end_season_playoff_standing']
-game_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=game_data_columns)
-game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].fillna(0) # Change NaNs to 0
-game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].astype(int)
+def get_data(columns, filePath):
+    data = pd.read_csv(filePath, usecols=columns)
+    return data
 
-# test_seasons = [2008, 2010, 2000, 2013]
-# test_data_cols = ['team_id','team','season','total_first_half_season_wins','total_first_half_season_shots','total_first_half_season_goals','total_first_half_season_pim','total_first_half_season_powerPlayOpportunities','end_season_playoff_standing']
-# test_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=test_data_cols)
-# test_data['end_season_playoff_standing'] = test_data['end_season_playoff_standing'].fillna(0)
-# test_data = test_data[test_data['season'].isin(test_seasons)]
-# with open('x_test.csv', 'w') as csvfile:
-#     writer = csv.writer(csvfile)
-#     writer.writerow(test_data_cols)
-#     for index, row in test_data.iterrows():
-#         writer.writerow(row)
+def v3_data():
+    # Read in data
+    game_data_columns = ['team_id','season','total_first_half_season_wins','total_first_half_season_shots','total_first_half_season_goals','total_first_half_season_pim','total_first_half_season_powerPlayOpportunities','end_season_playoff_standing']
+    game_data = get_data(game_data_columns, "cleaned_data_v3/first_half_season_summary.csv")
+    game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].fillna(0) # Change NaNs to 0
+    game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].astype(int)
+    # test_seasons = [2008, 2010, 2000, 2013]
+    # test_data_cols = ['team_id','team','season','total_first_half_season_wins','total_first_half_season_shots','total_first_half_season_goals','total_first_half_season_pim','total_first_half_season_powerPlayOpportunities','end_season_playoff_standing']
+    # test_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=test_data_cols)
+    # test_data['end_season_playoff_standing'] = test_data['end_season_playoff_standing'].fillna(0)
+    # test_data = test_data[test_data['season'].isin(test_seasons)]
+    # with open('x_test.csv', 'w') as csvfile:
+    #     writer = csv.writer(csvfile)
+    #     writer.writerow(test_data_cols)
+    #     for index, row in test_data.iterrows():
+    #         writer.writerow(row)
+    game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].mask(game_data['end_season_playoff_standing'] > 0, 1)
+    logistic_pca(game_data, 5, 'season', 'end_season_playoff_standing') 
 
-game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].mask(game_data['end_season_playoff_standing'] > 0, 1)
+def v4_data(type):
+    if type == 'avg':
+        shots = "Shots"
+    else:
+        shots = "Total Shots"
+    data_col = ['Season' , 'team_id', 'Total Wins',shots,'Blocked Shots','Goals','Power Play Goals','Power Play Opportunities','PIM','Player Hits','Giveaways','Takeaways','Injured Players','Standing']
+    data = get_data(data_col, "cleaned_data_v4/Logistic Model - Summary/first_half_season_" + type + ".csv")
+    data['Standing'] = data['Standing'].fillna(0) # Change NaNs to 0
+    data['Standing'] = data['Standing'].astype(int)
+    # test_seasons = [2008, 2006, 2003]
+    # test_data_cols = ['Season' , 'team_id', 'Total Wins',shots,'Blocked Shots','Goals','Power Play Goals','Power Play Opportunities','PIM','Player Hits','Giveaways','Takeaways','Injured Players','Standing']
+    # test_data = get_data(test_data_cols, "cleaned_data_v4/Logistic Model - Summary/first_half_season_" + type + ".csv")
+    # test_data['Standing'] = test_data['Standing'].fillna(0)
+    # test_data = test_data[test_data['Season'].isin(test_seasons)]
+    # with open('season_avg.csv', 'w') as csvfile:
+    #     writer = csv.writer(csvfile)
+    #     writer.writerow(test_data_cols)
+    #     for index, row in test_data.iterrows():
+    #         writer.writerow(row)
+    data['Standing'] = data['Standing'].mask(data['Standing'] > 0, 1)
+    logistic_pca(data, 9, 'Season', 'Standing')
 
-logistic_pca(game_data, 5)
+v3_data()
+# v4_data('total')
+# v4_data('avg')
+
