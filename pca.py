@@ -23,6 +23,12 @@ first_half_columns_modified = ['team_id', 'season_in_2000s', 'first_half_season_
                                'first_half_season_goals',
                                'first_half_season_pim', 'first_half_season_ppo']
 
+v4_avg_columns = ['team_id', 'Total Wins', 'Shots', 'Blocked Shots', 'Goals', 'Power Play Goals',
+                'Power Play Opportunities', 'PIM', 'Player Hits', 'Giveaways', 'Takeaways', 'Injured Players']
+
+v4_total_columns = ['team_id', 'Total Wins', 'Total Shots', 'Blocked Shots', 'Goals', 'Power Play Goals',
+                'Power Play Opportunities', 'PIM', 'Player Hits', 'Giveaways', 'Takeaways', 'Injured Players']
+
 # reading in csv files
 game_data = pd.read_csv("cleaned_data/game_stats.csv", usecols=game_data_columns)
 # changing 'won' column from boolean to int type
@@ -37,6 +43,12 @@ skater_data = pd.read_csv("cleaned_data/skater_stats.csv", usecols=skater_data_c
 
 # first_half_season_summary.csv file
 first_half = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=first_half_columns)
+
+# first_half_season_avg (cleaned_data_v4)
+v4_avg = pd.read_csv("cleaned_data_v4/Logistic Model - Summary/first_half_season_avg.csv", usecols=v4_avg_columns)
+
+# first_half_season_total (cleaned_data_v4)
+v4_total = pd.read_csv("cleaned_data_v4/Logistic Model - Summary/first_half_season_total.csv", usecols=v4_total_columns)
 
 # For visualization only
 # The names have been shortened in the file and the seasons have been changed from e.g. 2012 to 12 to reduce cluttering
@@ -56,7 +68,7 @@ first_half_modified = pd.read_csv("cleaned_data_v3/first_half_season_summary_mod
 
 scaler = MinMaxScaler()
 # finds correct number of components for dataset read in on line below - replace to find others
-data_rescaled = scaler.fit_transform(game_data)
+data_rescaled = scaler.fit_transform(v4_total)
 # 95% of variance
 pca = PCA(n_components=0.95)
 pca.fit(data_rescaled)
@@ -68,14 +80,14 @@ plt.rcParams["figure.figsize"] = (12, 6)
 
 fig, ax = plt.subplots()
 # for goalie_stats.csv dataset xi = np.arange(1,8,step=1) because initially 7 components
-xi = np.arange(1, 9, step=1)
+xi = np.arange(1, 13, step=1)
 y = np.cumsum(pca.explained_variance_ratio_)
 
 plt.ylim(0.0, 1.1)
 plt.plot(xi, y, marker='o', linestyle='--', color='b')
 
 plt.xlabel('Number of Components')
-plt.xticks(np.arange(0, 11, step=1))  # change from 0-based array index to 1-based human-readable label
+plt.xticks(np.arange(0, 13, step=1))  # change from 0-based array index to 1-based human-readable label
 plt.ylabel('Cumulative variance (%)')
 plt.title('The number of components needed to explain variance')
 
@@ -148,3 +160,35 @@ print(x4.shape)
 print(principal4.components_)
 
 # v.visualizeComponents(data=x4, title='Post-PCA First Half Season Data')  # Slow because there are a lot of data points
+
+
+## 9 components for first_half_season_avg.csv
+df5 = pd.DataFrame(v4_avg)
+scaling5 = StandardScaler()
+scaling5.fit(df5)
+Scaled_data5 = scaling5.transform(df5)
+# set n_components to number of PCA components that we want
+principal5 = PCA(n_components=9)
+principal5.fit(Scaled_data5)
+x5 = principal5.transform(Scaled_data5)
+print(x5.shape)
+
+print(principal5.components_)
+
+# v.visualizeComponents(data=x5, title='Post-PCA First Half Season Average cleaned_data_v4')  # Slow because there are a lot of data points
+
+
+## 9 components for first_half_season_total.csv
+df6 = pd.DataFrame(v4_total)
+scaling6 = StandardScaler()
+scaling6.fit(df6)
+Scaled_data6 = scaling6.transform(df6)
+# set n_components to number of PCA components that we want
+principal6 = PCA(n_components=9)
+principal6.fit(Scaled_data6)
+x6 = principal6.transform(Scaled_data6)
+print(x6.shape)
+
+print(principal6.components_)
+
+# v.visualizeComponents(data=x6, title='Post-PCA First Half Season Total cleaned_data_v4')  # Slow because there are a lot of data points
