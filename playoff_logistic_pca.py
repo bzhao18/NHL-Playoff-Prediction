@@ -137,17 +137,17 @@ game_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols
 game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].fillna(0) # Change NaNs to 0
 game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].astype(int)
 
-test_seasons = [2008, 2010, 2000, 2013]
-true_standings = game_data.loc[game_data['season'].isin(test_seasons)]
-true_standings = true_standings.loc[:, 'end_season_playoff_standing']
-# add true standings to x_test.csv
-# with open('x_test.csv', 'a') as csvfile:
+# test_seasons = [2008, 2010, 2000, 2013]
+# test_data_cols = ['team_id','team','season','total_first_half_season_wins','total_first_half_season_shots','total_first_half_season_goals','total_first_half_season_pim','total_first_half_season_powerPlayOpportunities','end_season_playoff_standing']
+# test_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=test_data_cols)
+# test_data['end_season_playoff_standing'] = test_data['end_season_playoff_standing'].fillna(0)
+# test_data = test_data[test_data['season'].isin(test_seasons)]
+# with open('x_test.csv', 'w') as csvfile:
 #     writer = csv.writer(csvfile)
-#     writer.writerow(['true_standings'])
-#     for row in true_standings:
-#         writer.writerow([row])
+#     writer.writerow(test_data_cols)
+#     for index, row in test_data.iterrows():
+#         writer.writerow(row)
+
 game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].mask(game_data['end_season_playoff_standing'] > 0, 1)
-
-
 
 logistic_pca(game_data, 5)

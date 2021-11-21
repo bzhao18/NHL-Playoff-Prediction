@@ -16,10 +16,10 @@ def visualize_predicted_true(data, season):
     # change null data to be 0
     data = data.loc[data['season'] == season, :]
     data['predicted_standings'] = data['predicted_standings'].fillna(0)
-    plt.scatter(data['true_standings'], data['predicted_standings'])
+    plt.scatter(data['true_standing'], data['predicted_standings'])
     plt.xlabel('True Standings')
     plt.ylabel('Predicted Standings')
-    plt.title('True vs. Predicted Standings')
+    plt.title('True vs. Predicted Standings: ' + str(season))
     plt.show()
 
 #visualize_predicted_true(playoff_standings, 2000)
@@ -31,18 +31,19 @@ def visualize_playoff_probability(data, season):
     import seaborn as sns
     sns.set_style("whitegrid")
     # convert playoffs to doubles
-    data['playoffs'] = data['playoffs'].astype(float)
+    data['prob_playoffs'] = data['prob_playoffs'].astype(float)
     # change null data to be 0
     data = data.loc[data['season'] == season]
-    plt.scatter(data['true_standings'], data['playoffs'])
+    plt.scatter(data['true_standing'], data['prob_playoffs'])
     plt.xlabel('True Standings')
     plt.ylabel('Probability of Playoffs')
-    plt.xticks(np.arange(0, data['true_standings'].max() + 1, 1))
+    plt.xticks(np.arange(0, data['true_standing'].max() + 1, 1))
     plt.yticks(np.arange(0, 1.1, 0.1))
     plt.ylim(-0.05, 1.05)
     plt.title('True Standing vs Probability of Playoffs: ' + str(season))
     plt.show()
 
-seasons = [2008, 2010, 2000, 2013].sort()
+seasons = [2008, 2010, 2000, 2013]
 for season in seasons:
     visualize_playoff_probability(playoff_standings, season)
+    visualize_predicted_true(playoff_standings, season)
