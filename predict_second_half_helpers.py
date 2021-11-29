@@ -2,36 +2,34 @@ import pandas as pd
 import csv
 
 # QUESTIONS
-# Do something about 'assume its normally distributed'?
 # Incorporate stdevs?
 
 # Utilize average team stats for seasons with average opposing team stats to predict stats related to second half games.
 def predict_second_half():
     columns = None
     # Get column names from first half stats to use as column names for CSV of predicted second half stats
-    with open('cleaned_data_v5/Logistic_Regression_GamebyGame/first_half_matchups.csv', newline='') as csv_to_read:
+    with open('cleaned_data_v6/Logistic Regression - GamebyGame/first_half_matchups.csv', newline='') as csv_to_read:
         reader = csv.reader(csv_to_read)
         columns = next(reader)
-        columns.remove('Home Win')
 
     # Make the new CSV of predicted second half stats
-    with open('cleaned_data_v5/Logistic_Regression_GamebyGame/stats_second_half_matchups.csv', 'w') as csv_to_write:
+    with open('cleaned_data_v6/Logistic Regression - GamebyGame/stats_second_half_matchups.csv', 'w') as csv_to_write:
         writer = csv.writer(csv_to_write, delimiter=',')
         writer.writerow(columns)
 
         # Second half matchups to attach predicted game data to in new CSV
-        second_half_matchups = pd.read_csv("cleaned_data_v5/Logistic_Regression_GamebyGame/second_half_matchups.csv")
+        second_half_matchups = pd.read_csv("cleaned_data_v6/Logistic Regression - GamebyGame/second_half_matchups.csv")
 
         # First half data of teams' average season stats and average seasons stats of all opposing teams of a team
-        teams_seasons_avgs = pd.read_csv("cleaned_data_v5/Logistic_Regression_GamebyGame/stat_generation_avg.csv")
-        opposing_teams_seasons_avgs = pd.read_csv("cleaned_data_v5/Logistic_Regression_GamebyGame/stat_generation_avg_op.csv")
+        teams_seasons_avgs = pd.read_csv("cleaned_data_v6/Logistic Regression - GamebyGame/stat_generation_avg.csv")
+        opposing_teams_seasons_avgs = pd.read_csv("cleaned_data_v6/Logistic Regression - GamebyGame/stat_generation_avg_op.csv")
 
         # Columns of numerical data for first half CSVs
         team_numerical_cols = ['Shots', 'Blocked Shots', 'Power Play Opportunities', 'PIM', 'Player Hits', 'Giveaways', 'Takeaways', 'Injured Players']
         opposing_numerical_cols = ['Shots', 'Shots Blocked', 'Power Play Opportunities', 'PIM', 'Player Hits', 'Giveaways', 'Takeaways', 'Injured Players']
 
-        for index, row in second_half_matchups.iterrows():
-            season, game_id, home_team_id, away_team_id = row['Season'], row['game_id'], row['home_team_id'], row['away_team_id']
+        for index, row in second_half_matchups.iterrows(): # 8657 games
+            season, game_id, home_team_id, away_team_id, home_team_win = row['Season'], row['game_id'], row['home_team_id'], row['away_team_id'], row['Home Win']
 
             # Get home team's average stats for the season
             home_team_season_avgs = teams_seasons_avgs.loc[teams_seasons_avgs['team_id'].eq(home_team_id) & teams_seasons_avgs['Season'].eq(season)]
@@ -53,15 +51,18 @@ def predict_second_half():
             avg_home_team_stats = (home_team_season_avgs_nums.to_numpy() + opposing_of_away_team_season_avgs_nums.to_numpy()) / 2
             avg_away_team_stats = (away_team_season_avgs_nums.to_numpy() + opposing_of_home_team_season_avgs_nums.to_numpy()) / 2
             predicted_game_stats_row = predicted_game_stats_row + avg_home_team_stats[0].tolist() + avg_away_team_stats[0].tolist()
+            predicted_game_stats_row.append(home_team_win)
             writer.writerow(predicted_game_stats_row)
 
 # After running PCA and Logistic Regression on predicted second half stats created above, use the predicted
 # second half game outcomes to update the teams' seasons' win totals.
 def get_season_win_totals(second_half_predictions):
     # Game matchups of the second half
-    matchups = pd.read_csv('cleaned_data_v5/Logistic_Regression_GamebyGame/second_half_matchups.csv')
+    matchups = pd.read_csv('cleaned_data_v6/Logistic Regression - GamebyGame/second_half_matchups.csv')
+
     # Win totals for each teams' season by the half way point of the season
-    wins = pd.read_csv('cleaned_data_v5/Logistic_Regression_GamebyGame/first_half_win_totals.csv')
+    wins = pd.read_csv('cleaned_data_v6/Logistic Regression - GamebyGame/first_half_win_totals.csv')
+
     # Update win totals with Logistic Regression predicted second half game outcomes
     for index, row in matchups.iterrows():
         season, home_team_id, away_team_id = row['Season'], row['home_team_id'], row['away_team_id']
@@ -71,10 +72,10 @@ def get_season_win_totals(second_half_predictions):
         # Away team win
         elif second_half_predictions[index] == 0:
             wins.loc[wins['team_id'].eq(away_team_id) & wins['Season'].eq(season), 'Total Wins'] += 1
-    wins.to_csv('cleaned_data_v5/Logistic_Regression_GamebyGame/win_totals.csv', index=False)
+    wins.to_csv('cleaned_data_v6/Logistic Regression - GamebyGame/win_totals.csv', index=False)
     return wins
 
-# TODO
+# IN PROGRESS
 # Utilize updated teams' seasons' win totals to predict the 16 teams that make it to the playoffs each season
 def get_playoff_teams(wins):
     # Eastern Conference
@@ -86,15 +87,23 @@ def get_playoff_teams(wins):
     pacific = ['San Jose Sharks (SJS)', 'Vancouver Canucks (VAN)', 'Edmonton Oilers (EDM)', 'Anaheim Ducks (ANA)', 'Los Angeles Kings (LAK)', 'Calgary Flames (CGY)', 'Vegas Golden Knights (VGK)']
 
     # Handle teams that no longer exist, young teams, and division & conference changes across the seasons
-
+    # Seasons: 2003, 2005, 2006, 2008, 2009, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2018
+    divisions_2003_2005 = {
+        "Atlantic": ['Philadelphia Flyers (PHI)', 'NY Rangers Rangers (NYR)', 'New Jersey Devils (NJD)', 'Pittsburgh Penguins (PIT)', 'NY Islanders Islanders (NYI)', 'Washington Capitals (WSH)', 'Atlanta Thrashers (ATL)'],
+        "Northeast": ['Boston Bruins (BOS)', 'Buffalo Sabres (BUF)', 'Montreal Canadiens (MTL)', 'Ottawa Senators (OTT)', ],
+        "Southeast": ['Florida Panthers (FLA)', 'Tampa Bay Lightning (TBL)', 'Toronto Maple Leafs (TOR)', 'Carolina Hurricanes (CAR)', ], 
+        "Central": [],
+        "Northwest": [],
+        "Pacific": []
+    }
     # Take top 3 in each division plus top 2 by points in conference
 
 
 
 # Incorporate stdevs?
 
-# teams_seasons_stdevs = pd.read_csv("cleaned_data_v5/Logistic_Regression_GamebyGame/stat_generation_avg.csv")
-# opposing_teams_seasons_stdevs = pd.read_csv("cleaned_data_v5/Logistic_Regression_GamebyGame/stat_generation_avg_op.csv")
+# teams_seasons_stdevs = pd.read_csv("cleaned_data_v6/Logistic Regression - GamebyGame/stat_generation_avg.csv")
+# opposing_teams_seasons_stdevs = pd.read_csv("cleaned_data_v6/Logistic Regression - GamebyGame/stat_generation_avg_op.csv")
 
 # # Get home team's stdev stats for the season
 # team_seasons_stdevs = teams_seasons_stdevs.loc[teams_seasons_stdevs['team_id'] == home_team_id]

@@ -1,0 +1,393 @@
+﻿Season,team_id,Team,Total Wins
+2017,3,NY Rangers Rangers (NYR),20
+2011,8,Montreal Canadiens (MTL),14
+2003,17,Detroit Red Wings (DET),22
+2009,29,Columbus Blue Jackets (CBJ),15
+2005,6,Boston Bruins (BOS),14
+2006,27,Phoenix Coyotes (PHX),15
+2006,1,New Jersey Devils (NJD),22
+2005,3,NY Rangers Rangers (NYR),22
+2016,4,Philadelphia Flyers (PHI),20
+2003,12,Carolina Hurricanes (CAR),12
+2013,17,Detroit Red Wings (DET),18
+2016,3,NY Rangers Rangers (NYR),25
+2006,5,Pittsburgh Penguins (PIT),16
+2010,13,Florida Panthers (FLA),16
+2009,1,New Jersey Devils (NJD),28
+2016,30,Minnesota Wild (MIN),23
+2015,26,Los Angeles Kings (LAK),23
+2009,18,Nashville Predators (NSH),23
+2017,12,Carolina Hurricanes (CAR),18
+2014,3,NY Rangers Rangers (NYR),20
+2014,19,St Louis Blues (STL),22
+2008,8,Montreal Canadiens (MTL),21
+2013,4,Philadelphia Flyers (PHI),19
+2015,18,Nashville Predators (NSH),18
+2017,22,Edmonton Oilers (EDM),17
+2015,17,Detroit Red Wings (DET),18
+2014,53,Arizona Coyotes (ARI),14
+2018,2,NY Islanders Islanders (NYI),21
+2011,17,Detroit Red Wings (DET),23
+2008,23,Vancouver Canucks (VAN),20
+2003,6,Boston Bruins (BOS),14
+2014,23,Vancouver Canucks (VAN),21
+2008,3,NY Rangers Rangers (NYR),23
+2008,19,St Louis Blues (STL),14
+2003,10,Toronto Maple Leafs (TOR),21
+2003,20,Calgary Flames (CGY),19
+2003,3,NY Rangers Rangers (NYR),15
+2017,2,NY Islanders Islanders (NYI),20
+2011,15,Washington Capitals (WSH),19
+2018,5,Pittsburgh Penguins (PIT),21
+2011,13,Florida Panthers (FLA),19
+2011,25,Dallas Stars (DAL),20
+2010,28,San Jose Sharks (SJS),20
+2015,19,St Louis Blues (STL),23
+2010,19,St Louis Blues (STL),19
+2017,1,New Jersey Devils (NJD),22
+2011,4,Philadelphia Flyers (PHI),22
+2009,26,Los Angeles Kings (LAK),22
+2006,20,Calgary Flames (CGY),18
+2005,7,Buffalo Sabres (BUF),26
+2016,13,Florida Panthers (FLA),15
+2013,25,Dallas Stars (DAL),19
+2018,52,Winnipeg Jets (WPG),24
+2009,23,Vancouver Canucks (VAN),23
+2003,29,Columbus Blue Jackets (CBJ),9
+2010,1,New Jersey Devils (NJD),10
+2005,5,Pittsburgh Penguins (PIT),10
+2014,17,Detroit Red Wings (DET),19
+2011,23,Vancouver Canucks (VAN),24
+2009,16,Chicago Blackhawks (CHI),26
+2008,20,Calgary Flames (CGY),21
+2017,23,Vancouver Canucks (VAN),16
+2013,8,Montreal Canadiens (MTL),23
+2011,22,Edmonton Oilers (EDM),15
+2009,11,Atlanta Thrashers (ATL),18
+2005,12,Carolina Hurricanes (CAR),23
+2016,17,Detroit Red Wings (DET),16
+2013,1,New Jersey Devils (NJD),17
+2018,6,Boston Bruins (BOS),21
+2014,5,Pittsburgh Penguins (PIT),22
+2017,7,Buffalo Sabres (BUF),10
+2014,2,NY Islanders Islanders (NYI),25
+2015,13,Florida Panthers (FLA),21
+2018,53,Arizona Coyotes (ARI),17
+2008,25,Dallas Stars (DAL),15
+2015,10,Toronto Maple Leafs (TOR),14
+2003,8,Montreal Canadiens (MTL),17
+2016,9,Ottawa Senators (OTT),20
+2008,7,Buffalo Sabres (BUF),17
+2009,5,Pittsburgh Penguins (PIT),26
+2018,14,Tampa Bay Lightning (TBL),30
+2003,23,Vancouver Canucks (VAN),20
+2014,30,Minnesota Wild (MIN),17
+2006,10,Toronto Maple Leafs (TOR),17
+2009,14,Tampa Bay Lightning (TBL),15
+2009,9,Ottawa Senators (OTT),20
+2018,21,Colorado Avalanche (COL),19
+2005,11,Atlanta Thrashers (ATL),16
+2010,29,Columbus Blue Jackets (CBJ),19
+2011,28,San Jose Sharks (SJS),19
+2018,19,St Louis Blues (STL),15
+2015,24,Anaheim Ducks (ANA),14
+2008,9,Ottawa Senators (OTT),13
+2014,10,Toronto Maple Leafs (TOR),20
+2018,15,Washington Capitals (WSH),24
+2008,21,Colorado Avalanche (COL),19
+2018,28,San Jose Sharks (SJS),21
+2006,6,Boston Bruins (BOS),19
+2009,19,St Louis Blues (STL),17
+2017,20,Calgary Flames (CGY),18
+2008,27,Phoenix Coyotes (PHX),17
+2015,8,Montreal Canadiens (MTL),21
+2017,5,Pittsburgh Penguins (PIT),19
+2003,30,Minnesota Wild (MIN),14
+2016,5,Pittsburgh Penguins (PIT),24
+2003,1,New Jersey Devils (NJD),19
+2018,12,Carolina Hurricanes (CAR),16
+2017,8,Montreal Canadiens (MTL),16
+2010,26,Los Angeles Kings (LAK),22
+2016,12,Carolina Hurricanes (CAR),16
+2013,20,Calgary Flames (CGY),14
+2009,15,Washington Capitals (WSH),24
+2017,16,Chicago Blackhawks (CHI),18
+2011,26,Los Angeles Kings (LAK),18
+2015,14,Tampa Bay Lightning (TBL),18
+2005,30,Minnesota Wild (MIN),18
+2003,21,Colorado Avalanche (COL),17
+2009,6,Boston Bruins (BOS),20
+2006,14,Tampa Bay Lightning (TBL),18
+2005,25,Dallas Stars (DAL),24
+2005,19,St Louis Blues (STL),9
+2010,17,Detroit Red Wings (DET),24
+2014,16,Chicago Blackhawks (CHI),25
+2014,12,Carolina Hurricanes (CAR),10
+2008,22,Edmonton Oilers (EDM),17
+2017,18,Nashville Predators (NSH),23
+2011,10,Toronto Maple Leafs (TOR),18
+2015,15,Washington Capitals (WSH),28
+2015,3,NY Rangers Rangers (NYR),21
+2015,2,NY Islanders Islanders (NYI),21
+2010,2,NY Islanders Islanders (NYI),10
+2014,15,Washington Capitals (WSH),18
+2008,10,Toronto Maple Leafs (TOR),15
+2006,19,St Louis Blues (STL),12
+2006,2,NY Islanders Islanders (NYI),19
+2015,1,New Jersey Devils (NJD),19
+2005,21,Colorado Avalanche (COL),19
+2005,23,Vancouver Canucks (VAN),21
+2005,2,NY Islanders Islanders (NYI),17
+2006,18,Nashville Predators (NSH),26
+2006,9,Ottawa Senators (OTT),21
+2011,19,St Louis Blues (STL),21
+2015,28,San Jose Sharks (SJS),18
+2016,24,Anaheim Ducks (ANA),18
+2011,29,Columbus Blue Jackets (CBJ),10
+2016,25,Dallas Stars (DAL),16
+2018,4,Philadelphia Flyers (PHI),15
+2016,14,Tampa Bay Lightning (TBL),18
+2010,12,Carolina Hurricanes (CAR),17
+2008,30,Minnesota Wild (MIN),18
+2016,22,Edmonton Oilers (EDM),19
+2011,18,Nashville Predators (NSH),20
+2017,25,Dallas Stars (DAL),21
+2010,9,Ottawa Senators (OTT),16
+2013,18,Nashville Predators (NSH),18
+2008,28,San Jose Sharks (SJS),28
+2006,29,Columbus Blue Jackets (CBJ),14
+2017,28,San Jose Sharks (SJS),20
+2005,27,Phoenix Coyotes (PHX),20
+2005,13,Florida Panthers (FLA),15
+2009,20,Calgary Flames (CGY),22
+2011,6,Boston Bruins (BOS),24
+2009,13,Florida Panthers (FLA),16
+2016,23,Vancouver Canucks (VAN),16
+2018,24,Anaheim Ducks (ANA),19
+2010,5,Pittsburgh Penguins (PIT),25
+2015,5,Pittsburgh Penguins (PIT),18
+2016,21,Colorado Avalanche (COL),12
+2009,30,Minnesota Wild (MIN),20
+2016,29,Columbus Blue Jackets (CBJ),26
+2016,53,Arizona Coyotes (ARI),11
+2011,9,Ottawa Senators (OTT),18
+2005,1,New Jersey Devils (NJD),16
+2006,11,Atlanta Thrashers (ATL),23
+2011,2,NY Islanders Islanders (NYI),13
+2018,17,Detroit Red Wings (DET),15
+2006,22,Edmonton Oilers (EDM),18
+2006,28,San Jose Sharks (SJS),25
+2010,24,Anaheim Ducks (ANA),19
+2005,15,Washington Capitals (WSH),13
+2016,26,Los Angeles Kings (LAK),17
+2009,28,San Jose Sharks (SJS),25
+2014,26,Los Angeles Kings (LAK),18
+2003,4,Philadelphia Flyers (PHI),19
+2015,9,Ottawa Senators (OTT),18
+2003,26,Los Angeles Kings (LAK),16
+2016,6,Boston Bruins (BOS),20
+2006,4,Philadelphia Flyers (PHI),9
+2013,15,Washington Capitals (WSH),20
+2018,25,Dallas Stars (DAL),20
+2013,22,Edmonton Oilers (EDM),13
+2014,4,Philadelphia Flyers (PHI),14
+2013,9,Ottawa Senators (OTT),17
+2010,10,Toronto Maple Leafs (TOR),13
+2015,12,Carolina Hurricanes (CAR),16
+2005,22,Edmonton Oilers (EDM),22
+2003,13,Florida Panthers (FLA),12
+2003,2,NY Islanders Islanders (NYI),19
+2010,3,NY Rangers Rangers (NYR),22
+2011,5,Pittsburgh Penguins (PIT),21
+2005,17,Detroit Red Wings (DET),25
+2003,19,St Louis Blues (STL),21
+2016,1,New Jersey Devils (NJD),14
+2009,25,Dallas Stars (DAL),17
+2017,29,Columbus Blue Jackets (CBJ),22
+2018,9,Ottawa Senators (OTT),15
+2005,14,Tampa Bay Lightning (TBL),19
+2016,10,Toronto Maple Leafs (TOR),16
+2003,5,Pittsburgh Penguins (PIT),9
+2015,30,Minnesota Wild (MIN),19
+2005,16,Chicago Blackhawks (CHI),13
+2011,20,Calgary Flames (CGY),18
+2016,20,Calgary Flames (CGY),19
+2013,12,Carolina Hurricanes (CAR),14
+2015,29,Columbus Blue Jackets (CBJ),14
+2018,13,Florida Panthers (FLA),16
+2010,27,Phoenix Coyotes (PHX),17
+2015,20,Calgary Flames (CGY),17
+2008,16,Chicago Blackhawks (CHI),20
+2018,3,NY Rangers Rangers (NYR),16
+2010,16,Chicago Blackhawks (CHI),20
+2018,22,Edmonton Oilers (EDM),18
+2006,17,Detroit Red Wings (DET),23
+2010,25,Dallas Stars (DAL),22
+2013,28,San Jose Sharks (SJS),25
+2013,23,Vancouver Canucks (VAN),23
+2016,52,Winnipeg Jets (WPG),17
+2014,7,Buffalo Sabres (BUF),14
+2013,24,Anaheim Ducks (ANA),28
+2009,4,Philadelphia Flyers (PHI),19
+2009,8,Montreal Canadiens (MTL),21
+2008,29,Columbus Blue Jackets (CBJ),16
+2018,30,Minnesota Wild (MIN),18
+2017,54,Vegas Golden Knights (VGK),26
+2014,52,Winnipeg Jets (WPG),19
+2010,11,Atlanta Thrashers (ATL),20
+2008,4,Philadelphia Flyers (PHI),20
+2008,2,NY Islanders Islanders (NYI),12
+2015,23,Vancouver Canucks (VAN),14
+2015,16,Chicago Blackhawks (CHI),21
+2006,23,Vancouver Canucks (VAN),20
+2006,7,Buffalo Sabres (BUF),28
+2017,17,Detroit Red Wings (DET),14
+2009,10,Toronto Maple Leafs (TOR),14
+2015,21,Colorado Avalanche (COL),18
+2005,20,Calgary Flames (CGY),22
+2016,8,Montreal Canadiens (MTL),22
+2006,12,Carolina Hurricanes (CAR),21
+2014,9,Ottawa Senators (OTT),15
+2015,4,Philadelphia Flyers (PHI),15
+2005,29,Columbus Blue Jackets (CBJ),12
+2014,25,Dallas Stars (DAL),16
+2016,16,Chicago Blackhawks (CHI),23
+2013,2,NY Islanders Islanders (NYI),12
+2018,29,Columbus Blue Jackets (CBJ),22
+2005,18,Nashville Predators (NSH),24
+2010,20,Calgary Flames (CGY),16
+2018,20,Calgary Flames (CGY),23
+2013,26,Los Angeles Kings (LAK),25
+2018,1,New Jersey Devils (NJD),15
+2003,25,Dallas Stars (DAL),17
+2018,7,Buffalo Sabres (BUF),21
+2005,26,Los Angeles Kings (LAK),24
+2014,20,Calgary Flames (CGY),20
+2017,53,Arizona Coyotes (ARI),9
+2014,29,Columbus Blue Jackets (CBJ),15
+2013,10,Toronto Maple Leafs (TOR),20
+2006,30,Minnesota Wild (MIN),20
+2008,12,Carolina Hurricanes (CAR),17
+2014,1,New Jersey Devils (NJD),13
+2011,52,Winnipeg Jets (WPG),18
+2008,15,Washington Capitals (WSH),24
+2016,15,Washington Capitals (WSH),21
+2014,18,Nashville Predators (NSH),24
+2003,7,Buffalo Sabres (BUF),14
+2017,9,Ottawa Senators (OTT),12
+2014,21,Colorado Avalanche (COL),13
+2014,14,Tampa Bay Lightning (TBL),24
+2013,16,Chicago Blackhawks (CHI),28
+2018,8,Montreal Canadiens (MTL),20
+2013,13,Florida Panthers (FLA),15
+2014,6,Boston Bruins (BOS),19
+2008,1,New Jersey Devils (NJD),21
+2013,5,Pittsburgh Penguins (PIT),29
+2005,24,Anaheim Ducks (ANA),17
+2011,1,New Jersey Devils (NJD),21
+2003,22,Edmonton Oilers (EDM),13
+2016,18,Nashville Predators (NSH),16
+2013,21,Colorado Avalanche (COL),23
+2009,24,Anaheim Ducks (ANA),16
+2010,15,Washington Capitals (WSH),22
+2006,24,Anaheim Ducks (ANA),28
+2017,6,Boston Bruins (BOS),21
+2003,27,Phoenix Coyotes (PHX),11
+2013,6,Boston Bruins (BOS),26
+2018,18,Nashville Predators (NSH),23
+2010,8,Montreal Canadiens (MTL),21
+2017,14,Tampa Bay Lightning (TBL),28
+2018,16,Chicago Blackhawks (CHI),15
+2008,13,Florida Panthers (FLA),16
+2014,22,Edmonton Oilers (EDM),8
+2016,7,Buffalo Sabres (BUF),13
+2018,26,Los Angeles Kings (LAK),15
+2005,28,San Jose Sharks (SJS),16
+2008,5,Pittsburgh Penguins (PIT),19
+2008,26,Los Angeles Kings (LAK),15
+2005,9,Ottawa Senators (OTT),27
+2013,29,Columbus Blue Jackets (CBJ),17
+2003,14,Tampa Bay Lightning (TBL),15
+2017,30,Minnesota Wild (MIN),20
+2010,21,Colorado Avalanche (COL),20
+2013,52,Winnipeg Jets (WPG),18
+2014,28,San Jose Sharks (SJS),19
+2016,28,San Jose Sharks (SJS),23
+2008,11,Atlanta Thrashers (ATL),12
+2017,4,Philadelphia Flyers (PHI),16
+2015,52,Winnipeg Jets (WPG),17
+2006,15,Washington Capitals (WSH),16
+2009,27,Phoenix Coyotes (PHX),25
+2017,10,Toronto Maple Leafs (TOR),23
+2003,24,Anaheim Ducks (ANA),12
+2011,16,Chicago Blackhawks (CHI),24
+2015,7,Buffalo Sabres (BUF),15
+2010,23,Vancouver Canucks (VAN),22
+2006,21,Colorado Avalanche (COL),18
+2010,14,Tampa Bay Lightning (TBL),22
+2006,13,Florida Panthers (FLA),15
+2015,6,Boston Bruins (BOS),20
+2013,3,NY Rangers Rangers (NYR),20
+2014,24,Anaheim Ducks (ANA),24
+2017,24,Anaheim Ducks (ANA),18
+2010,7,Buffalo Sabres (BUF),15
+2009,22,Edmonton Oilers (EDM),16
+2009,3,NY Rangers Rangers (NYR),18
+2017,13,Florida Panthers (FLA),17
+2008,18,Nashville Predators (NSH),17
+2013,30,Minnesota Wild (MIN),20
+2006,16,Chicago Blackhawks (CHI),16
+2008,24,Anaheim Ducks (ANA),19
+2010,22,Edmonton Oilers (EDM),12
+2015,22,Edmonton Oilers (EDM),15
+2003,16,Chicago Blackhawks (CHI),9
+2010,4,Philadelphia Flyers (PHI),23
+2005,4,Philadelphia Flyers (PHI),24
+2009,17,Detroit Red Wings (DET),19
+2014,8,Montreal Canadiens (MTL),24
+2006,26,Los Angeles Kings (LAK),14
+2015,25,Dallas Stars (DAL),27
+2011,14,Tampa Bay Lightning (TBL),17
+2011,24,Anaheim Ducks (ANA),10
+2008,6,Boston Bruins (BOS),28
+2017,26,Los Angeles Kings (LAK),23
+2017,21,Colorado Avalanche (COL),18
+2013,27,Phoenix Coyotes (PHX),19
+2003,28,San Jose Sharks (SJS),14
+2011,21,Colorado Avalanche (COL),20
+2016,2,NY Islanders Islanders (NYI),14
+2008,17,Detroit Red Wings (DET),24
+2010,30,Minnesota Wild (MIN),17
+2016,19,St Louis Blues (STL),19
+2010,18,Nashville Predators (NSH),18
+2011,7,Buffalo Sabres (BUF),17
+2011,12,Carolina Hurricanes (CAR),13
+2005,10,Toronto Maple Leafs (TOR),21
+2018,54,Vegas Golden Knights (VGK),23
+2010,6,Boston Bruins (BOS),20
+2003,18,Nashville Predators (NSH),16
+2013,19,St Louis Blues (STL),27
+2018,23,Vancouver Canucks (VAN),19
+2003,15,Washington Capitals (WSH),11
+2003,9,Ottawa Senators (OTT),18
+2009,12,Carolina Hurricanes (CAR),10
+2013,14,Tampa Bay Lightning (TBL),23
+2005,8,Montreal Canadiens (MTL),18
+2006,3,NY Rangers Rangers (NYR),19
+2003,11,Atlanta Thrashers (ATL),19
+2011,3,NY Rangers Rangers (NYR),23
+2006,25,Dallas Stars (DAL),25
+2014,13,Florida Panthers (FLA),16
+2011,30,Minnesota Wild (MIN),21
+2009,7,Buffalo Sabres (BUF),24
+2017,52,Winnipeg Jets (WPG),22
+2013,7,Buffalo Sabres (BUF),11
+2009,21,Colorado Avalanche (COL),23
+2017,19,St Louis Blues (STL),24
+2018,10,Toronto Maple Leafs (TOR),26
+2017,15,Washington Capitals (WSH),24
+2009,2,NY Islanders Islanders (NYI),16
+2008,14,Tampa Bay Lightning (TBL),10
+2006,8,Montreal Canadiens (MTL),22
+2011,27,Phoenix Coyotes (PHX),19
+2015,53,Arizona Coyotes (ARI),17

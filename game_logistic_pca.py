@@ -7,14 +7,15 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, roc_curve, auc
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
 from predict_second_half_helpers import *
 
 # Transform data using PCA to be used for Logistic Regression to predict second half game outcomes
 def logistic_pca(training, testing, n_components, label_col):
     y_train = training.loc[:,label_col]
     X_train = training.drop(label_col, 1)
-    X_test = testing
+    y_test = testing.loc[:,label_col]
+    X_test = testing.drop(label_col, 1)
+    print(X_test)
 
     print("Training rows: {} | Testing rows: {}".format(X_train.shape[0], X_test.shape[0]))
     total_rows = X_train.shape[0] + X_test.shape[0]
@@ -61,29 +62,29 @@ def logistic_pca(training, testing, n_components, label_col):
 
     # Predict test data labels
     y_pred = logreg.predict(X_test)
-    # score = logreg.score(X_test, y_test)
-    # print('Accuracy on test data: {:.2f}'.format(score))
+    score = logreg.score(X_test, y_test)
+    print('Accuracy on test data: {:.2f}'.format(score))
 
-    # # Confusion matrix
-    # print('Confusion matrix:\n', confusion_matrix(y_test, y_pred))
+    # Confusion matrix
+    print('Confusion matrix:\n', confusion_matrix(y_test, y_pred))
 
-    # # ROC curve
-    # fpr, tpr, thresholds = roc_curve(y_test, y_pred)
-    # roc_auc = auc(fpr, tpr)
-    # print("ROC Area Under the Curve (AUC): %0.2f" % roc_auc)
-    # plt.plot(fpr, tpr, label='ROC curve (area = %0.2f)' % roc_auc)
-    # plt.plot([0, 1], [0, 1], 'k--')
-    # plt.xlim([0.0, 1.0])
-    # plt.ylim([0.0, 1.05])
-    # plt.xlabel('False Positive Rate')
-    # plt.ylabel('True Positive Rate')
-    # plt.title('Receiver operating characteristic example')
-    # plt.legend(loc="lower right")
-    # plt.show()
+    # ROC curve
+    fpr, tpr, thresholds = roc_curve(y_test, y_pred)
+    roc_auc = auc(fpr, tpr)
+    print("ROC Area Under the Curve (AUC): %0.2f" % roc_auc)
+    plt.plot(fpr, tpr, label='ROC curve (area = %0.2f)' % roc_auc)
+    plt.plot([0, 1], [0, 1], 'k--')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver operating characteristic example')
+    plt.legend(loc="lower right")
+    plt.show()
 
     # See link in logistic.py to implement other measurements like precision, recall, F-measure, and support
 
-    # Update teams' seasons' win totals by producing cleaned_data_v5/Logistic_Regression_GamebyGame/win_totals.csv
+    # Update teams' seasons' win totals by producing cleaned_data_v6/Logistic Regression - GamebyGame/win_totals.csv
     wins = get_season_win_totals(y_pred)
 
     # # Predict 16 teams that make it to each seasons' playoffs based on updated win totals
@@ -118,10 +119,11 @@ def get_data(columns, filePath):
     return data
 
 # Read in data
-first_half_columns = ['Home Shots', 'Home Shots Blocked', 'Home Power Play Opportunities', 'Home PIM', 'Home Player Hits', 'Home Giveaways', 'Home Takeaways', 'Home Injured Players', 'Away Shots', 'Away Shots Blocked', 'Away Power Play Opportunities', 'Away PIM', 'Away Player Hits', 'Away Giveaways', 'Away Takeaways', 'Away Injured Players', 'Home Win']
-first_half = get_data(first_half_columns, "cleaned_data_v5/Logistic_Regression_GamebyGame/first_half_matchups.csv")
-# predict_second_half() # Run if stats_second_half_matchups.csv not generated yet in cleaned_data_v5/Logistic_Regression_GamebyGame
-second_half_columns = first_half_columns.copy()
-second_half_columns.remove('Home Win')
-second_half = get_data(second_half_columns, "cleaned_data_v5/Logistic_Regression_GamebyGame/stats_second_half_matchups.csv")
-logistic_pca(first_half, second_half, 13, 'Home Win')
+columns = ['Home Shots', 'Home Shots Blocked', 'Home Power Play Opportunities', 'Home PIM', 'Home Player Hits', 'Home Giveaways', 'Home Takeaways', 'Home Injured Players', 'Away Shots', 'Away Shots Blocked', 'Away Power Play Opportunities', 'Away PIM', 'Away Player Hits', 'Away Giveaways', 'Away Takeaways', 'Away Injured Players', 'Home Win']
+first_half = get_data(columns, "cleaned_data_v6/Logistic Regression - GamebyGame/first_half_matchups.csv")
+
+# Run if stats_second_half_matchups.csv not generated yet in cleaned_data_v6/Logistic Regression - GamebyGame
+# predict_second_half()
+second_half = get_data(columns, "cleaned_data_v6/Logistic Regression - GamebyGame/stats_second_half_matchups.csv")
+
+# logistic_pca(first_half, second_half, 13, 'Home Win')
