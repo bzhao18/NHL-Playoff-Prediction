@@ -123,7 +123,8 @@ columns = ['Home Shots', 'Home Shots Blocked', 'Home Power Play Opportunities', 
 first_half = get_data(columns, "cleaned_data_v6/Logistic Regression - GamebyGame/first_half_matchups.csv")
 
 # Run if stats_second_half_matchups.csv not generated yet in cleaned_data_v6/Logistic Regression - GamebyGame
-# predict_second_half()
+predict_second_half()
+
 second_half = get_data(columns, "cleaned_data_v6/Logistic Regression - GamebyGame/stats_second_half_matchups.csv")
 
-# logistic_pca(first_half, second_half, 13, 'Home Win')
+logistic_pca(first_half, second_half, 13, 'Home Win')

@@ -77,27 +77,217 @@ def get_season_win_totals(second_half_predictions):
 
 # IN PROGRESS
 # Utilize updated teams' seasons' win totals to predict the 16 teams that make it to the playoffs each season
+# Handle teams new teams plus division & conference changes across the seasons
+# Seasons in data set: 2003, 2005-2006, 2008-2018
 def get_playoff_teams(wins):
-    # Eastern Conference
-    atlantic = ['Boston Bruins (BOS)', 'Buffalo Sabres (BUF)', 'Detroit Red Wings (DET)', 'Montreal Canadiens (MTL)', 'Florida Panthers (FLA)', 'Ottawa Senators (OTT)', 'Tampa Bay Lightning (TBL)', 'Toronto Maple Leafs (TOR)']
-    metropolitan = ['Philadelphia Flyers (PHI)', 'NY Rangers Rangers (NYR)', 'New Jersey Devils (NJD)', 'Pittsburgh Penguins (PIT)', 'Carolina Hurricanes (CAR)', 'Columbus Blue Jackets (CBJ)', 'NY Islanders Islanders (NYI)', 'Washington Capitals (WSH)', 'Atlanta Thrashers (ATL)']
-
-    # Western Conference
-    central = ['Winnipeg Jets (WPG)', 'Phoenix Coyotes (PHX)', 'St Louis Blues (STL)', 'Colorado Avalanche (COL)', 'Nashville Predators (NSH)', 'Dallas Stars (DAL)', 'Arizona Coyotes (ARI)', 'Chicago Blackhawks (CHI)', 'Minnesota Wild (MIN)']
-    pacific = ['San Jose Sharks (SJS)', 'Vancouver Canucks (VAN)', 'Edmonton Oilers (EDM)', 'Anaheim Ducks (ANA)', 'Los Angeles Kings (LAK)', 'Calgary Flames (CGY)', 'Vegas Golden Knights (VGK)']
-
-    # Handle teams that no longer exist, young teams, and division & conference changes across the seasons
-    # Seasons: 2003, 2005, 2006, 2008, 2009, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2018
-    divisions_2003_2005 = {
-        "Atlantic": ['Philadelphia Flyers (PHI)', 'NY Rangers Rangers (NYR)', 'New Jersey Devils (NJD)', 'Pittsburgh Penguins (PIT)', 'NY Islanders Islanders (NYI)', 'Washington Capitals (WSH)', 'Atlanta Thrashers (ATL)'],
-        "Northeast": ['Boston Bruins (BOS)', 'Buffalo Sabres (BUF)', 'Montreal Canadiens (MTL)', 'Ottawa Senators (OTT)', ],
-        "Southeast": ['Florida Panthers (FLA)', 'Tampa Bay Lightning (TBL)', 'Toronto Maple Leafs (TOR)', 'Carolina Hurricanes (CAR)', ], 
-        "Central": [],
-        "Northwest": [],
-        "Pacific": []
+    # In 2006, Mighty Ducks of Anaheim changed their name to the Anaheim Ducks, but the data uses the same label so no change needed.
+    # Unused from data set: 'Winnipeg Jets (WPG)', 'Arizona Coyotes (ARI)', 'Vegas Golden Knights (VGK)'
+    divisions_2001_2010 = {
+        "Atlantic": ['New Jersey Devils (NJD)', 'NY Islanders Islanders (NYI)', 'NY Rangers Rangers (NYR)', 'Philadelphia Flyers (PHI)', 'Pittsburgh Penguins (PIT)'],
+        "Northeast": ['Boston Bruins (BOS)', 'Buffalo Sabres (BUF)', 'Montreal Canadiens (MTL)', 'Ottawa Senators (OTT)', 'Toronto Maple Leafs (TOR)'],
+        "Southeast": ['Atlanta Thrashers (ATL)', 'Carolina Hurricanes (CAR)', 'Florida Panthers (FLA)', 'Tampa Bay Lightning (TBL)', 'Washington Capitals (WSH)'], 
+        "Central": ['Chicago Blackhawks (CHI)', 'Columbus Blue Jackets (CBJ)', 'Detroit Red Wings (DET)', 'Nashville Predators (NSH)', 'St Louis Blues (STL)'],
+        "Northwest": ['Calgary Flames (CGY)', 'Colorado Avalanche (COL)', 'Edmonton Oilers (EDM)', 'Minnesota Wild (MIN)', 'Vancouver Canucks (VAN)'],
+        "Pacific": ['Anaheim Ducks (ANA)', 'Dallas Stars (DAL)', 'Los Angeles Kings (LAK)', 'Phoenix Coyotes (PHX)', 'San Jose Sharks (SJS)']
     }
-    # Take top 3 in each division plus top 2 by points in conference
 
+    # Atlanta Thrashers moved to Canada and became Winnipeg Jets
+    # Unused from data set: 'Atlanta Thrashers (ATL)', 'Arizona Coyotes (ARI)', 'Vegas Golden Knights (VGK)'
+    divisions_2011_2012 = {
+        "Atlantic": ['New Jersey Devils (NJD)', 'NY Islanders Islanders (NYI)', 'NY Rangers Rangers (NYR)', 'Philadelphia Flyers (PHI)', 'Pittsburgh Penguins (PIT)'],
+        "Northeast": ['Boston Bruins (BOS)', 'Buffalo Sabres (BUF)', 'Montreal Canadiens (MTL)', 'Ottawa Senators (OTT)', 'Toronto Maple Leafs (TOR)'],
+        "Southeast": ['Carolina Hurricanes (CAR)', 'Florida Panthers (FLA)', 'Tampa Bay Lightning (TBL)', 'Washington Capitals (WSH)', 'Winnipeg Jets (WPG)'], 
+        "Central": ['Chicago Blackhawks (CHI)', 'Columbus Blue Jackets (CBJ)', 'Detroit Red Wings (DET)', 'Nashville Predators (NSH)', 'St Louis Blues (STL)'],
+        "Northwest": ['Calgary Flames (CGY)', 'Colorado Avalanche (COL)', 'Edmonton Oilers (EDM)', 'Minnesota Wild (MIN)', 'Vancouver Canucks (VAN)'],
+        "Pacific": ['Anaheim Ducks (ANA)', 'Dallas Stars (DAL)', 'Los Angeles Kings (LAK)', 'Phoenix Coyotes (PHX)', 'San Jose Sharks (SJS)']
+    }
+
+    # Realignment from 6 to 4 divisions
+    # Unused from data set: 'Atlanta Thrashers (ATL)', 'Arizona Coyotes (ARI)', 'Vegas Golden Knights (VGK)', 
+    divisions_2013 = {
+        # Eastern Conference
+        "Atlantic": ['Boston Bruins (BOS)', 'Buffalo Sabres (BUF)', 'Detroit Red Wings (DET)', 'Florida Panthers (FLA)', 'Montreal Canadiens (MTL)', 'Ottawa Senators (OTT)', 'Tampa Bay Lightning (TBL)', 'Toronto Maple Leafs (TOR)'],
+        "Metropolitan": ['Carolina Hurricanes (CAR)', 'Columbus Blue Jackets (CBJ)', 'New Jersey Devils (NJD)', 'NY Islanders Islanders (NYI)', 'NY Rangers Rangers (NYR)', 'Philadelphia Flyers (PHI)', 'Pittsburgh Penguins (PIT)', 'Washington Capitals (WSH)'],
+
+        # Western Conference
+        "Central": ['Chicago Blackhawks (CHI)', 'Colorado Avalanche (COL)', 'Dallas Stars (DAL)', 'Minnesota Wild (MIN)', 'Nashville Predators (NSH)', 'St Louis Blues (STL)', 'Winnipeg Jets (WPG)'],
+        "Pacific": ['Anaheim Ducks (ANA)', 'Calgary Flames (CGY)', 'Edmonton Oilers (EDM)', 'Los Angeles Kings (LAK)', 'Phoenix Coyotes (PHX)', 'San Jose Sharks (SJS)', 'Vancouver Canucks (VAN)']
+    }
+
+    # Phoenix Coyotes change name to Arizona Coyotes
+    # Unused from data set: 'Atlanta Thrashers (ATL)', 'Vegas Golden Knights (VGK)', 'Phoenix Coyotes (PHX)', 
+    divisions_2014_2016 = {
+        # Eastern Conference
+        "Atlantic": ['Boston Bruins (BOS)', 'Buffalo Sabres (BUF)', 'Detroit Red Wings (DET)', 'Florida Panthers (FLA)', 'Montreal Canadiens (MTL)', 'Ottawa Senators (OTT)', 'Tampa Bay Lightning (TBL)', 'Toronto Maple Leafs (TOR)'],
+        "Metropolitan": ['Carolina Hurricanes (CAR)', 'Columbus Blue Jackets (CBJ)', 'New Jersey Devils (NJD)', 'NY Islanders Islanders (NYI)', 'NY Rangers Rangers (NYR)', 'Philadelphia Flyers (PHI)', 'Pittsburgh Penguins (PIT)', 'Washington Capitals (WSH)'],
+
+        # Western Conference
+        "Central": ['Chicago Blackhawks (CHI)', 'Colorado Avalanche (COL)', 'Dallas Stars (DAL)', 'Minnesota Wild (MIN)', 'Nashville Predators (NSH)', 'St Louis Blues (STL)', 'Winnipeg Jets (WPG)'],
+        "Pacific": ['Anaheim Ducks (ANA)', 'Arizona Coyotes (ARI)', 'Calgary Flames (CGY)', 'Edmonton Oilers (EDM)', 'Los Angeles Kings (LAK)', 'San Jose Sharks (SJS)', 'Vancouver Canucks (VAN)']
+    }
+
+    # New team Vegas Golden Knights
+    # Unused from data set: 'Atlanta Thrashers (ATL)', 'Phoenix Coyotes (PHX)', 
+    divisions_2017_2019 = {
+        # Eastern Conference
+        "Atlantic": ['Boston Bruins (BOS)', 'Buffalo Sabres (BUF)', 'Detroit Red Wings (DET)', 'Florida Panthers (FLA)', 'Montreal Canadiens (MTL)', 'Ottawa Senators (OTT)', 'Tampa Bay Lightning (TBL)', 'Toronto Maple Leafs (TOR)'],
+        "Metropolitan": ['Carolina Hurricanes (CAR)', 'Columbus Blue Jackets (CBJ)', 'New Jersey Devils (NJD)', 'NY Islanders Islanders (NYI)', 'NY Rangers Rangers (NYR)', 'Philadelphia Flyers (PHI)', 'Pittsburgh Penguins (PIT)', 'Washington Capitals (WSH)'],
+
+        # Western Conference
+        "Central": ['Chicago Blackhawks (CHI)', 'Colorado Avalanche (COL)', 'Dallas Stars (DAL)', 'Minnesota Wild (MIN)', 'Nashville Predators (NSH)', 'St Louis Blues (STL)', 'Winnipeg Jets (WPG)'],
+        "Pacific": ['Anaheim Ducks (ANA)', 'Arizona Coyotes (ARI)', 'Calgary Flames (CGY)', 'Edmonton Oilers (EDM)', 'Los Angeles Kings (LAK)', 'San Jose Sharks (SJS)', 'Vancouver Canucks (VAN)', 'Vegas Golden Knights (VGK)']
+    }
+
+    # Take top 3 in each division plus top 2 by points in conference
+    atlantic_2001_2010, northeast_2001_2010, southeast_2001_2010, central_2001_2010, northwest_2001_2010, pacific_2001_2010 = {}, {}, {}, {}
+    atlantic_2011_2012, northeast_2011_2012, southeast_2011_2012, central_2011_2012, northwest_2011_2012, pacific_2011_2012 = {}, {}, {}, {}
+    atlantic_2013, metropolitan_2013, central_2013, pacific_2013 = {}, {}, {}, {}
+    atlantic_2014_2016, metropolitan_2014_2016, central_2014_2016, pacific_2014_2016 = {}, {}, {}, {}
+    atlantic_2017_2019, metropolitan_2017_2019, central_2017_2019, pacific_2017_2019 = {}, {}, {}, {}
+
+    _2017_2019 = []
+    for index, row in wins.iterrows():
+        season, team_name, season_wins = row['Season'], row['Team'], row['Total Wins']
+        if season >= 2003 and season <= 2010:
+            if team_name in divisions_2001_2010['Atlantic']:
+                atlantic_2001_2010[team_name] = season_wins
+            elif team_name in divisions_2001_2010['Northeast']:
+                northeast_2001_2010[team_name] = season_wins
+            elif team_name in divisions_2001_2010['Southeast']:
+                southeast_2001_2010[team_name] = season_wins
+            elif team_name in divisions_2001_2010['Central']:
+                central_2001_2010[team_name] = season_wins
+            elif team_name in divisions_2001_2010['Northwest']:
+                northwest_2001_2010[team_name] = season_wins
+            elif team_name in divisions_2001_2010['Pacific']:
+                pacific_2001_2010[team_name] = season_wins
+        if season == 2011 and season == 2012:
+            if team_name in divisions_2011_2012['Atlantic']:
+                atlantic_2011_2012[team_name] = season_wins
+            elif team_name in divisions_2011_2012['Northeast']:
+                northeast_2011_2012[team_name] = season_wins
+            elif team_name in divisions_2011_2012['Southeast']:
+                southeast_2011_2012[team_name] = season_wins
+            elif team_name in divisions_2011_2012['Central']:
+                central_2011_2012[team_name] = season_wins
+            elif team_name in divisions_2011_2012['Northwest']:
+                northwest_2011_2012[team_name] = season_wins
+            elif team_name in divisions_2011_2012['Pacific']:
+                pacific_2011_2012[team_name] = season_wins
+        if season == 2013:
+            if team_name in divisions_2013['Atlantic']:
+                atlantic_2013[team_name] = season_wins
+            elif team_name in divisions_2013['Metropolitan']:
+                metropolitan_2013[team_name] = season_wins
+            elif team_name in divisions_2013['Central']:
+                central_2013[team_name] = season_wins
+            elif team_name in divisions_2013['Pacific']:
+                pacific_2013[team_name] = season_wins
+        if season >= 2014 and season <= 2016:
+            if team_name in divisions_2014_2016['Atlantic']:
+                atlantic_2014_2016[team_name] = season_wins
+            elif team_name in divisions_2014_2016['Metropolitan']:
+                metropolitan_2014_2016[team_name] = season_wins
+            elif team_name in divisions_2014_2016['Central']:
+                central_2014_2016[team_name] = season_wins
+            elif team_name in divisions_2014_2016['Pacific']:
+                pacific_2014_2016[team_name] = season_wins
+        if season >= 2017 and season <= 2019:
+            if team_name in divisions_2017_2019['Atlantic']:
+                atlantic_2017_2019[team_name] = season_wins
+            elif team_name in divisions_2017_2019['Metropolitan']:
+                metropolitan_2017_2019[team_name] = season_wins
+            elif team_name in divisions_2017_2019['Central']:
+                central_2017_2019[team_name] = season_wins
+            elif team_name in divisions_2017_2019['Pacific']:
+                pacific_2017_2019[team_name] = season_wins
+
+    # Sort by value largest first. List of tuples?
+    atlantic_2001_2010.sort()
+    northeast_2001_2010.sort()
+    central_2001_2010.sort()
+    pacific_2001_2010.sort()
+    
+    atlantic_2011_2012.sort()
+    northeast_2011_2012.sort()
+    central_2011_2012.sort()
+    pacific_2011_2012.sort()
+    
+    atlantic_2013.sort()
+    metropolitan_2013.sort()
+    central_2013.sort()
+    pacific_2013.sort()
+    
+    atlantic_2014_2016.sort()
+    metropolitan_2014_2016.sort()
+    central_2014_2016.sort()
+    pacific_2014_2016.sort()
+    
+    atlantic_2017_2019.sort()
+    metropolitan_2017_2019.sort()
+    central_2017_2019.sort()
+    pacific_2017_2019.sort()
+
+    # Playoff system  with 6 divisions
+    
+    atlantic_2013_top3 = atlantic_2013[0:3]
+    metropolitan_2013_top3 = metropolitan_2013[0:3]
+    central_2013_top3 = central_2013[0:3]
+    pacific_2013_top3 = pacific_2013[0:3]
+    east_2013_wild_card_teams = (atlantic_2013[3:5] + metropolitan_2013[3:5]).sort()[0:2]
+    west_2013_wild_card_teams = (central_2013[3:5] + pacific_2013[3:5]).sort()[0:2]
+
+    atlantic_2014_2016_top3 = atlantic_2014_2016[0:3]
+    metropolitan_2014_2016_top3 = metropolitan_2014_2016[0:3]
+    central_2014_2016_top3 = central_2014_2016[0:3]
+    pacific_2014_2016_top3 = pacific_2014_2016[0:3]
+    east_2014_2016_wild_card_teams = (atlantic_2014_2016[3:5] + metropolitan_2014_2016[3:5]).sort()[0:2]
+    west_2014_2016_wild_card_teams = (central_2014_2016[3:5] + pacific_2014_2016[3:5]).sort()[0:2]
+
+    atlantic_2017_2019_top3 = atlantic_2017_2019[0:3]
+    metropolitan_2017_2019_top3 = metropolitan_2017_2019[0:3]
+    central_2017_2019_top3 = central_2017_2019[0:3]
+    pacific_2017_2019_top3 = pacific_2017_2019[0:3]
+    east_2017_2019_wild_card_teams = (atlantic_2017_2019[3:5] + metropolitan_2017_2019[3:5]).sort()[0:2]
+    west_2017_2019_wild_card_teams = (central_2017_2019[3:5] + pacific_2017_2019[3:5]).sort()[0:2]
+
+
+
+    # team_name_to_id = {
+    #     'Atlanta Thrashers (ATL)': ,
+    #     'Phoenix Coyotes (PHX)': ,
+    #     'Boston Bruins (BOS)': ,
+    #     'Buffalo Sabres (BUF)': ,
+    #     'Detroit Red Wings (DET)': ,
+    #     'Florida Panthers (FLA)': ,
+    #     'Montreal Canadiens (MTL)': ,
+    #     'Ottawa Senators (OTT)': ,
+    #     'Tampa Bay Lightning (TBL)': ,
+    #     'Toronto Maple Leafs (TOR)']: ,
+    #     'Carolina Hurricanes (CAR)': ,
+    #     'Columbus Blue Jackets (CBJ)': ,
+    #     'New Jersey Devils (NJD)': ,
+    #     'NY Islanders Islanders (NYI)': ,
+    #     'NY Rangers Rangers (NYR)': ,
+    #     'Philadelphia Flyers (PHI)': ,
+    #     'Pittsburgh Penguins (PIT)': ,
+    #     'Washington Capitals (WSH)': ,
+    #     'Chicago Blackhawks (CHI)': ,
+    #     'Colorado Avalanche (COL)': ,
+    #     'Dallas Stars (DAL)': ,
+    #     'Minnesota Wild (MIN)': ,
+    #     'Nashville Predators (NSH)': ,
+    #     'St Louis Blues (STL)': ,
+    #     'Winnipeg Jets (WPG)': ,
+    #     'Anaheim Ducks (ANA)': ,
+    #     'Arizona Coyotes (ARI)': ,
+    #     'Calgary Flames (CGY)': ,
+    #     'Edmonton Oilers (EDM)': ,
+    #     'Los Angeles Kings (LAK)': ,
+    #     'San Jose Sharks (SJS)': ,
+    #     'Vancouver Canucks (VAN)': ,
+    #     'Vegas Golden Knights (VGK)': 
+    # }
 
 
 # Incorporate stdevs?
