@@ -29,6 +29,11 @@ v4_avg_columns = ['team_id', 'Total Wins', 'Shots', 'Blocked Shots', 'Goals', 'P
 v4_total_columns = ['team_id', 'Total Wins', 'Total Shots', 'Blocked Shots', 'Goals', 'Power Play Goals',
                 'Power Play Opportunities', 'PIM', 'Player Hits', 'Giveaways', 'Takeaways', 'Injured Players']
 
+v5_gbg_first_half_columns = ['Home Shots', 'Home Shots Blocked', 'Home Power Play Opportunities', 'Home PIM', 
+                            'Home Player Hits', 'Home Giveaways', 'Home Takeaways', 'Home Injured Players', 
+                            'Away Shots', 'Away Shots Blocked', 'Away Power Play Opportunities', 'Away PIM', 
+                            'Away Player Hits', 'Away Giveaways', 'Away Takeaways', 'Away Injured Players']
+
 # reading in csv files
 game_data = pd.read_csv("cleaned_data/game_stats.csv", usecols=game_data_columns)
 # changing 'won' column from boolean to int type
@@ -50,6 +55,9 @@ v4_avg = pd.read_csv("cleaned_data_v4/Logistic Model - Summary/first_half_season
 # first_half_season_total (cleaned_data_v4)
 v4_total = pd.read_csv("cleaned_data_v4/Logistic Model - Summary/first_half_season_total.csv", usecols=v4_total_columns)
 
+# game-by-game v5 cleaned data first half matchups
+v5_gbg_first_half = pd.read_csv("cleaned_data_v5/Logistic Regression - GamebyGame/first_half_matchups.csv", usecols=v5_gbg_first_half_columns)
+
 # For visualization only
 # The names have been shortened in the file and the seasons have been changed from e.g. 2012 to 12 to reduce cluttering
 first_half_modified = pd.read_csv("cleaned_data_v3/first_half_season_summary_modified.csv",
@@ -68,7 +76,7 @@ first_half_modified = pd.read_csv("cleaned_data_v3/first_half_season_summary_mod
 
 scaler = MinMaxScaler()
 # finds correct number of components for dataset read in on line below - replace to find others
-data_rescaled = scaler.fit_transform(v4_total)
+data_rescaled = scaler.fit_transform(v5_gbg_first_half)
 # 95% of variance
 pca = PCA(n_components=0.95)
 pca.fit(data_rescaled)
@@ -80,14 +88,14 @@ plt.rcParams["figure.figsize"] = (12, 6)
 
 fig, ax = plt.subplots()
 # for goalie_stats.csv dataset xi = np.arange(1,8,step=1) because initially 7 components
-xi = np.arange(1, 13, step=1)
+xi = np.arange(1, 17, step=1)
 y = np.cumsum(pca.explained_variance_ratio_)
 
 plt.ylim(0.0, 1.1)
 plt.plot(xi, y, marker='o', linestyle='--', color='b')
 
 plt.xlabel('Number of Components')
-plt.xticks(np.arange(0, 13, step=1))  # change from 0-based array index to 1-based human-readable label
+plt.xticks(np.arange(0, 16, step=1))  # change from 0-based array index to 1-based human-readable label
 plt.ylabel('Cumulative variance (%)')
 plt.title('The number of components needed to explain variance')
 
