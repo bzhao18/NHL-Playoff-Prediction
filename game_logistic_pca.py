@@ -80,15 +80,15 @@ def logistic_pca(training, testing, n_components, label_col):
     plt.ylabel('True Positive Rate')
     plt.title('Receiver operating characteristic example')
     plt.legend(loc="lower right")
-    plt.show()
+    # plt.show()
 
     # See link in logistic.py to implement other measurements like precision, recall, F-measure, and support
 
     # Update teams' seasons' win totals by producing cleaned_data_v6/Logistic Regression - GamebyGame/win_totals.csv
     wins = get_season_win_totals(y_pred)
 
-    # # Predict 16 teams that make it to each seasons' playoffs based on updated win totals
-    # get_playoff_teams(wins)
+    # Predict 16 teams that make it to each seasons' playoffs based on updated win totals
+    get_playoff_teams(wins)
 
 # Print the current balance of data rows of home team wins and losses
 def balance_info(y_train, label_col):
@@ -97,8 +97,7 @@ def balance_info(y_train, label_col):
     losses = np.where(np_y_train == 0)[0]
     print("Current Training Data Balance. Total Rows: {}. Home wins: {}. Home losses: {}. ".format(y_train.shape[0], wins.shape[0], losses.shape[0]))
 
-# For any p-value p of a PCA dimension, if p >= .05, then add the dimension index to a list of indices of
-# dimensions to be removed
+# For any p-value p of a PCA dimension, if p >= .05, then add the dimension index to a list of indices of dimensions to be removed
 def check_insignificant(p_values):
     removed_dim_bool = False
     dims_to_remove = []
@@ -123,7 +122,7 @@ columns = ['Home Shots', 'Home Shots Blocked', 'Home Power Play Opportunities', 
 first_half = get_data(columns, "cleaned_data_v6/Logistic Regression - GamebyGame/first_half_matchups.csv")
 
 # Run if stats_second_half_matchups.csv not generated yet in cleaned_data_v6/Logistic Regression - GamebyGame
-predict_second_half()
+# predict_second_half()
 
 second_half = get_data(columns, "cleaned_data_v6/Logistic Regression - GamebyGame/stats_second_half_matchups.csv")
 
