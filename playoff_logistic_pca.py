@@ -9,29 +9,34 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, roc_curve, auc
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 import csv
 
 # Transform data using PCA to be used for Logistic Regression to predict making it to the playoffs
 # TODO: Dynamic retrieval of n_componenets from PCA
 def logistic_pca(data, n_components, season_col, standing_col):
     # Sample 20% number (round up) of seasons
-    seasons = set(data[season_col])
-    num_seasons = len(seasons)
-    num_test_seasons = math.ceil(num_seasons * .2)
-    random.seed(150) # Uncomment to get same sample. Change seed value to get different sample.
-    test_seasons = random.sample(seasons, num_test_seasons)
-    print("Test seasons are:", test_seasons)
-    
+    # seasons = set(data[season_col])
+    # num_seasons = len(seasons)
+    # num_test_seasons = math.ceil(num_seasons * .2)
+    # random.seed(150) # Uncomment to get same sample. Change seed value to get different sample.
+    # test_seasons = random.sample(seasons, num_test_seasons)
+    # print("Test seasons are:", test_seasons)
+    X = data.loc[:, data.columns != 'end_season_playoff_standing']  # Data
+    y = data.loc[:, data.columns == 'end_season_playoff_standing']  # Data's labels
+    y = np.squeeze(y)  # Prevent shape warning
+    y = np.where(y > 0, 1, 0)  # For binary classification, change any playoff standing that is not 0, to 1
 
-    # Split data into training and test sets
-    X_train = data.loc[~data[season_col].isin(test_seasons)]
-    X_test = data.loc[data[season_col].isin(test_seasons)]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.8, random_state=0)
+
+
+    # Split data into training and test sets - test only on season 2018
+    X_train = data[data[season_col] != 2018]
+    X_test = data[data[season_col] == 2018]
     y_train = X_train.loc[:, standing_col]
     y_test = X_test.loc[:, standing_col]
     X_train = X_train.drop(standing_col, 1)
     X_test = X_test.drop(standing_col, 1)
-    # write x_test to csv file
-    # X_test.to_csv('x_test.csv')
     print("Proportion training: {0:.4f} | Proportion testing: {1:.4f}".format(X_train.shape[0] / data.shape[0], X_test.shape[0] / data.shape[0]))
 
     # Print info on current balance of standings
@@ -142,15 +147,15 @@ def v3_data():
     game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].fillna(0) # Change NaNs to 0
     game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].astype(int)
     # test_seasons = [2008, 2010, 2000, 2013]
-    # test_data_cols = ['team_id','team','season','total_first_half_season_wins','total_first_half_season_shots','total_first_half_season_goals','total_first_half_season_pim','total_first_half_season_powerPlayOpportunities','end_season_playoff_standing']
-    # test_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=test_data_cols)
-    # test_data['end_season_playoff_standing'] = test_data['end_season_playoff_standing'].fillna(0)
-    # test_data = test_data[test_data['season'].isin(test_seasons)]
-    # with open('x_test.csv', 'w') as csvfile:
-    #     writer = csv.writer(csvfile)
-    #     writer.writerow(test_data_cols)
-    #     for index, row in test_data.iterrows():
-    #         writer.writerow(row)
+    test_data_cols = ['team_id','team','season','total_first_half_season_wins','total_first_half_season_shots','total_first_half_season_goals','total_first_half_season_pim','total_first_half_season_powerPlayOpportunities','end_season_playoff_standing']
+    test_data = pd.read_csv("cleaned_data_v3/first_half_season_summary.csv", usecols=test_data_cols)
+    test_data['end_season_playoff_standing'] = test_data['end_season_playoff_standing'].fillna(0)
+    test_data = test_data[test_data['season'] == 2018]
+    with open('less_features_2018.csv', 'w') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(test_data_cols)
+        for index, row in test_data.iterrows():
+            writer.writerow(row)
     game_data['end_season_playoff_standing'] = game_data['end_season_playoff_standing'].mask(game_data['end_season_playoff_standing'] > 0, 1)
     logistic_pca(game_data, 5, 'season', 'end_season_playoff_standing') 
 
@@ -164,10 +169,10 @@ def v4_data(type):
     data['Standing'] = data['Standing'].fillna(0) # Change NaNs to 0
     data['Standing'] = data['Standing'].astype(int)
     # test_seasons = [2008, 2006, 2003]
-    # test_data_cols = ['Season' , 'team_id', 'Total Wins',shots,'Blocked Shots','Goals','Power Play Goals','Power Play Opportunities','PIM','Player Hits','Giveaways','Takeaways','Injured Players','Standing']
+    # test_data_cols = ['Season' , 'team_id','Team', 'Total Wins',shots,'Blocked Shots','Goals','Power Play Goals','Power Play Opportunities','PIM','Player Hits','Giveaways','Takeaways','Injured Players','Standing']
     # test_data = get_data(test_data_cols, "cleaned_data_v4/Logistic Model - Summary/first_half_season_" + type + ".csv")
     # test_data['Standing'] = test_data['Standing'].fillna(0)
-    # test_data = test_data[test_data['Season'].isin(test_seasons)]
+    # test_data = test_data[test_data['Season'] == 2018]
     # with open('season_avg.csv', 'w') as csvfile:
     #     writer = csv.writer(csvfile)
     #     writer.writerow(test_data_cols)
@@ -176,7 +181,7 @@ def v4_data(type):
     data['Standing'] = data['Standing'].mask(data['Standing'] > 0, 1)
     logistic_pca(data, 9, 'Season', 'Standing')
 
-v3_data()
+#v3_data()
 # v4_data('total')
-# v4_data('avg')
+v4_data('avg')
 
