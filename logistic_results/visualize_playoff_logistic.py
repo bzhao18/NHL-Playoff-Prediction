@@ -6,7 +6,7 @@ def read_data(file_name):
     data = pd.read_csv(file_name)
     return data
 
-playoff_standings = read_data('less_features_2018.csv')
+playoff_standings = read_data('season_avg.csv')
 
 # TODO: Create visualizations: x axis should be "true_standings" and y axis should be "predicted_standings"
 def visualize_predicted_true(data, season):
@@ -38,11 +38,11 @@ def visualize_playoff_probability(data, season):
     # change null data to be 0
     data['predicted_standings'] = data['predicted_standings'].fillna(0)
     # change 0 to be 17
-    data['true_standing'] = data['true_standing'].replace(0, 17)
-    plt.scatter(data['true_standing'], data['prob_playoffs'])
+    data['Standing'] = data['Standing'].replace(0, 17)
+    plt.scatter(data['Standing'], data['prob_playoffs'])
     plt.xlabel('True Standings')
     plt.ylabel('Probability of Playoffs')
-    plt.xticks(np.arange(1, data['true_standing'].max() + 1, 1))
+    plt.xticks(np.arange(1, data['Standing'].max() + 1, 1))
     plt.yticks(np.arange(0, 1.1, 0.1))
     plt.ylim(-0.05, 1.05)
     plt.title('True Standing vs Probability of Playoffs: ' + str(season))
