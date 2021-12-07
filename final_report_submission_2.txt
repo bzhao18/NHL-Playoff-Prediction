@@ -1,0 +1,6 @@
+2
+5
+Bryan Zhao,Karishma Sabnani,Timothy Bang,Gabrielle Germanson,Noah Wallace
+NHL Playoff Prediction
+https://youtu.be/PDIHt9SkQEI
+https://github.gatech.edu/pages/ksabnani6/cs-4641-project/

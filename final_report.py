@@ -1,14 +1,14 @@
 
 print("Only one member needs to submit on Gradescope. Please make sure to include all your group members into the group submission.")
-group_num = input("Please enter your group number: 2")
-num_members = input("Please enter the number of group members: 5")
+group_num = input("Please enter your group number: ")
+num_members = input("Please enter the number of group members: ")
 name_list = []
 for i in range(int(num_members)):
-    name_list.append(input(f"Please enter the name of member {i+1}: Bryan Zhao, Karishma Sabnani, Timothy Bang, Gabrielle Germanson, Noah Wallace"))
+    name_list.append(input(f"Please enter the name of member {i+1}: "))
 name_str = ','.join(name_list)
-project_title = input("Please enter your Project Title here: NHL Playoff Prediction")
-video_link = input("Please copy and paste the link to your presentation Video here: https://youtu.be/PDIHt9SkQEI")
-github_page_link = input("Please copy and paste the github page link here: https://github.gatech.edu/pages/ksabnani6/cs-4641-project/")
+project_title = input("Please enter your Project Title here: ")
+video_link = input("Please copy and paste the link to your presentation Video here: ")
+github_page_link = input("Please copy and paste the github page link here: ")
 
 
 with open(f'final_report_submission_{group_num}.txt', 'w') as f:
