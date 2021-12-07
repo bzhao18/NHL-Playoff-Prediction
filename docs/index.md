@@ -176,4 +176,4 @@ Looking back on our project, we believe that our accuracy could be improved with
 [2]	J. J. Heyne, A. J. Fenn, and S. Brook, “NHL Team Production,” Social Science Research Network, Rochester, NY, SSRN Scholarly Paper ID 942856, Oct. 2006. doi: 10.2139/ssrn.942856.\\
 [3]	R. Bunker and T. Susnjak, “The Application of Machine Learning Techniques for Predicting Results in Team Sport: A Review,” ArXiv191211762 Cs Stat, Dec. 2019, Accessed: Oct. 03, 2021. [Online]. Available: http://arxiv.org/abs/1912.11762\\
 [4]	“NHL Hockey Standings,” NHL.com. https://www.nhl.com/standings (accessed Nov. 15, 2021).\\
-[5]	Mikulskibartosz, “PCA — how to choose the number of components?,” Bartosz Mikulski, Jun. 03, 2019. https://mikulskibartosz.name/pca-how-to-choose-the-number-of-components/ (accessed Nov. 16, 2021).\\
+[5]	Mikulskibartosz, “PCA — how to choose the number of components?,” Bartosz Mikulski, Jun. 03, 2019. https://mikulskibartosz.name/pca-how-to-choose-the-number-of-components/ (accessed Nov. 16, 2021).
