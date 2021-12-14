@@ -1,4 +1,4 @@
-## NHL Playoff Prediction
+## NHL Playoff Predictor
 Bryan Zhao, Karishma Sabnani, Timothy Bang, Gabrielle Germanson, Noah Wallace
 
 ### 1 - Introduction/Background
