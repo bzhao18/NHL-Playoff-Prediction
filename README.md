@@ -1,1 +1,1 @@
-# cs-4641-project
+# NHL Playoff Prediction Project
